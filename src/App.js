@@ -1,8 +1,9 @@
+import Card from "./components/card/Card";
 
 function App() {
   return (
     <div >
-<h1>Hello Satya's Team !!!</h1>
+      <Card/>
     </div>
   );
 }
