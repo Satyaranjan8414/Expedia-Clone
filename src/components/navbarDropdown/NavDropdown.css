@@ -1,0 +1,155 @@
+.nDropdown{
+    position: absolute;
+    top: 37px;
+    left:-320px;
+    width: 22.875rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 3rem 0px 0.4rem 0px;
+    
+}
+
+
+.DropdownWrapper {
+     display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    /* border: 1px solid rebeccapurple; */
+}
+
+
+.nDropdown > div{
+    width: 100%;
+
+}
+
+
+.nDropdown > .DropdownWrapper > div{
+    width: 100%;
+}
+
+
+
+.navLogoTextcon > div:first-child{
+    width: 48%;
+    margin: 0px auto ;
+    padding: 0 1.5rem  0.4rem 1.5rem;
+}
+
+.navLogoTextcon img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+
+
+
+.navstrix > p {
+    padding: 0 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #151e39;
+}
+
+.navDropdownSignBtn{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 0px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #3763d8;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.paddingNavDrop{
+    padding: 0 1.5rem;
+}
+
+.navDLogIn {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #151e39;
+  cursor: pointer;
+}
+
+.navDLogIn > span:hover{
+    color: #3763d8;
+}
+
+
+.navdropRewards{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #151e39;
+}
+
+.navdropRewards > p {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+}
+
+
+
+.navdropRewards > :hover  , .navDropDownFeedback:hover{
+    background-color: #e7edfd;
+}
+
+.navDropDownFeedback{
+    padding: 0.75rem 1.5rem;
+}
+
+
+
+@media all and (max-width:362px) {
+    .nDropdown{
+       width: 20rem;
+       left:-280px;
+    }
+
+    .navLogoTextcon > div:first-child{
+
+        padding: 0 1.5rem  0.4rem 1rem;
+    }
+    
+
+    .navstrix > p {
+        padding: 0 1rem;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #151e39;
+    }
+
+    .navdropRewards > p {
+        padding: 0.75rem 1rem;
+    }
+
+
+    .navDropDownFeedback{
+        padding: 0.75rem 1rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+

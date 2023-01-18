@@ -1,9 +1,5 @@
-import React from 'react'
-
 const Hotels = () => {
-  return (
-    <div>Hotels</div>
-  )
-}
+  return <div>Hotels</div>;
+};
 
-export default Hotels
+export default Hotels;
