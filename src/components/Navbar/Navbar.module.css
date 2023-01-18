@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+.Navbar{
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #c5c7ce;
+    width: 100%;
+   padding: 1rem 0px;
+    
+}
+
+.navbarWrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #343b53;
+    max-width: 1247px;
+}
+
+.navbarLogo {
+     width: 9%;
+     margin-right: 2rem;
+     /* border: 1px solid rebeccapurple; */
+}
+
+.navbarWrapper img {
+    width: 100%;
+    cursor: pointer;
+    
+}
+
+.navbarWrapper > div:nth-child(2){
+    flex: 4.8;
+}
+
+
+.navMoreOption{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid rebeccapurple; */
+    position: relative;
+}
+
+.navMoreOption > p , .navMoreOption > p > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.navMoreOption > p > span{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+
+.navMoreOption > p:hover{
+    color: aquamarine;
+    transition: 2s;
+}
+
+.nav1{
+     flex: 3;
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+    /* border: 1px solid red; */
+}
+
+.nav1 > div{
+     /* border: 1px solid rebeccapurple; */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 0px;
+}
+
+
+.nav1 > div > span:hover  {
+    color: lightseagreen;
+}
+
+
+ .nav1   .Navbellicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    font-size: 1.3rem;
+    /* border: 1px solid rebeccapurple; */
+}
+
+
+
+.NavLanguageSelect > div , .nav1 > div > span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav1  span{
+    cursor: pointer;
+}
+
+.navDropdown{
+    position: relative;
+}
+
+
+.navbarGlobalIcon{
+  display: flex;
+}
+
+.NavLanguageSelect{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid rebeccapurple; */
+}
+
+
+.listDisplayNone{
+    display: none;
+}
+
+
+
+
+
+/* * --------- afterSignUp ----- *  */
+
+
+.AfterSignup{
+    color: black;
+    position: relative;
+    transition: 5s;
+}
+
+.AfterSignup > span{
+    font-size: 1.3rem;
+}
+
+
+.navB{
+    display: none;
+}
+
+
+/* * ----- responsive ----- *  */
+
+@media all and (max-width:991px){
+    .nav1{
+        display: none;
+    }
+   
+    .navbarLogo{
+        width: 12%;
+        padding-left: 0.7rem;
+    }
+
+    .navB{
+        display: flex;
+    }
+    
+}
+
+
+
+@media all and (max-width:575px){
+    .NabContainerSearchicon{
+     display: block;
+    }
+
+
+    .navbarWrapper >  div:first-child {
+        width: 15%;
+        margin-right: 0;
+   }
+   
+
+
+    .navMoreOption{
+        display: none;
+    }
+
+
+
+    .navbarWrapper{      
+        justify-content: space-between;
+    }
+
+
+    .navbarWrapper > div:first-child {
+        width: 20%;
+   }
+   
+   .navbarWrapper img {
+       width: 100%;
+       cursor: pointer;
+   }
+ }
+
+
+
+ /* ** ---- new navbar ---- ** */
+
+ .AuthNewNavbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+ }
+
+
+ .AuthNewNavbar > a {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+
+
+

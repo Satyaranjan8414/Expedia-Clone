@@ -1,0 +1,38 @@
+.NavMoreOption{
+    position: absolute;
+    top: 37px;
+    left:0;
+    width: 22.875rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+}
+
+
+
+.navMoreOptionDiv{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* border: 1px solid green; */
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+.navMoreOptionDiv1{
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+
+
+
+.NavmoreoptionWrapper > div:hover{
+    background-color: #e7edfd;
+}

@@ -1,0 +1,86 @@
+.authDropdown{
+    position: absolute;
+    top: 37px;
+    left:-320px;
+    width: 22.875rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: #fff;
+    padding: 1.5rem 0px;
+}
+
+.authDropdownWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+}
+
+
+.authDropdownWrapper > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.authDropdownUserDetail{
+    text-align: center;
+}
+
+.authDropdownUserDetail > h2{
+   font-weight: 700;
+   font-size: 1.3rem;
+   color: #151e39;
+}
+
+.authDropdownUserDetail > h3{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #343434;
+}
+
+.authDropdownBlueMember{
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.authDropdownBlueMember > span{
+    background: #193082;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.7rem;
+    color: #fff;
+}
+
+.authDropdownPrice{
+    margin-top: 1.1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #151e39;
+}
+
+
+
+
+.authNavbarfeedbackothercontainer > div {
+    width: 100%;
+ padding: 0.55rem  1.5rem;
+ font-size: 1rem;
+ cursor: pointer;
+ color: #353c54;
+ font-weight: 400;
+}
+
+
+.authNavbarfeedbackothercontainer > div:hover , .authdropdownSignout:hover{
+    background-color:#e7edfd ;
+}
+
+.authdropdownSignout{
+    width: 100%;
+    padding: 0.55rem  1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #353c54;
+    font-weight: 400;
+}
