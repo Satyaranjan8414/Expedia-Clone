@@ -9,10 +9,13 @@ import { AiOutlineDown } from "react-icons/ai";
 import { FaBell } from "react-icons/fa";
 import { MoreOption } from "../moreOption/MoreOption";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Navbar = ({ type }) => {
+  let auth = useSelector((state) => state.AuthReducer.isAuth);
+
   const [drop, setdrop] = useState(false);
-  const [Auth, setAuth] = useState(false);
+  const [Auth, setAuth] = useState(auth || false);
   const [trigger, settrigger] = useState(false);
   const [triggerMoreOption, setMoreOption] = useState(false);
 
@@ -20,19 +23,15 @@ export const Navbar = ({ type }) => {
     setdrop((prev) => !prev);
   };
 
-  const AuthTrigger = () => {
-    setAuth((prev) => !prev);
-  };
-
-  console.log(type);
-
   return (
     <div className={navbar.Navbar}>
-      <div className={navbar.navbarWrapper}>
+      <div
+        className={
+          type === "list" ? navbar.AuthnewWrapperS : navbar.navbarWrapper
+        }
+      >
         <div
-          className={
-            type == "list" ? ` ${navbar.AuthNewNavbar}` : navbar.navbarLogo
-          }
+          className={type == "list" ? navbar.AuthNewNavbar : navbar.navbarLogo}
         >
           <Link to="/">
             <img src="https://i.imgur.com/wQLmi8a.png" alt="" />
@@ -59,7 +58,7 @@ export const Navbar = ({ type }) => {
             <div>
               <AiOutlineGlobal />
             </div>
-            <span onClick={AuthTrigger}>English</span>
+            <span>English</span>
           </div>
           <div>
             <span>Support</span>
@@ -89,7 +88,7 @@ export const Navbar = ({ type }) => {
           )}
         </div>
 
-        <div className={navbar.navB}>
+        <div className={type == "list" ? navbar.listDisplayNone : navbar.navB}>
           <Navb />
         </div>
       </div>

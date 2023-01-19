@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.headerTravellrs{
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid red;
+    width: 350px;
+    text-align: left;
+    padding: 1rem 1.5rem;
+}
+
+
+.headerTravellrsOption{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.headerTravellrsOption > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HeaderTravellersController{
+    display: flex;
+    gap: 15px;
+}
+
+.HeaderTravellersIncreaseNumber{
+    border: 1px solid #676c7e;
+    height: 1.875em;
+    width: 1.875em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #676c7e;
+    font-size: 1rem;
+    font-weight: 600;
+}

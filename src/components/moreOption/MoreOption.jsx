@@ -6,11 +6,11 @@ import { RiSuitcase2Fill } from "react-icons/ri";
 import { FaTicketAlt } from "react-icons/fa";
 import { useState } from "react";
 
-export const MoreOption = () => {
+export const MoreOption = ({ type }) => {
   return (
-    <div className="NavMoreOption">
+    <div className={type === "left" ? "navMoreOptionLeft" : "NavMoreOption"}>
       <div className="NavmoreoptionWrapper">
-        <div className="navMoreOptionDiv">
+        <div className={"navMoreOptionDiv"}>
           <span>
             <HiBuildingOffice2 />
           </span>

@@ -5,8 +5,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Loginfunction } from "../Redux/AuthContext/action";
-import { InfinitySpin } from  'react-loader-spinner'
-
+import { InfinitySpin } from "react-loader-spinner";
 
 import {
   Box,
@@ -24,13 +23,26 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { Navbar } from "../components/navbar/Navbar";
 
-const  Login =()=> {
+const Login = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [userObj, setUserObj] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //   const { userData, isAuth, isError } = useSelector((state) => {
+  //     return {
+  //       userData: state.AuthReducer.userData,
+  //       isAuth: state.AuthReducer.isAuth,
+  //       isError: state.AuthReducer.isError,
+  //     };
+  //   }, shallowEqual);
+
+  //   const dispatch = useDispatch();
+  //   const navigate = useNavigate();
+  //   const toast = useToast();
+  const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
   const { userData, isAuth, isError } = useSelector((state) => {
     return {
       userData: state.AuthReducer.userData,
@@ -50,6 +62,72 @@ const  Login =()=> {
     }, 2000);
   }, []);
 
+  //   useEffect(() => {
+  //     if (isAuth) {
+  //       toast({
+  //         title: `LogIn Successfull`,
+  //         status: "success",
+  //         duration: 500,
+  //         position: "top",
+  //         isClosable: true,
+  //       });
+  //       setTimeout(() => {
+  //         navigate("/");
+  //       }, 1500);
+  //     }
+  //   }, [isAuth]);
+
+  //   useEffect(() => {
+  //     axios
+  //       .get("https://636b1db9b10125b78feba23b.mockapi.io/profile")
+  //       .then((response) => {
+  //         setUserObj(response.data);
+  //       })
+  //       .catch((e) => {
+  //         console.log(e);
+  //       });
+  //   }, []);
+
+  //   const SendSignInRequest = () => {
+  //     let check;
+
+  //     let checkEmail = userObj.filter((el) => {
+  //       return el.email === email;
+  //     });
+
+  //     if (checkEmail.length > 0) {
+  //       check = userObj.filter((el) => {
+  //         return el.email === email && el.password === password;
+  //       });
+  //       //console.log(check[0]);
+
+  //       if (check.length > 0) {
+  //         dispatch(
+  //           Loginfunction({
+  //             ...check[0],
+  //           })
+  //         );
+  //       } else if (check.length === 0) {
+  //         toast({
+  //           title: `Wrong Password !!!`,
+  //           status: "error",
+  //           duration: 1500,
+  //           position: "top",
+  //           isClosable: true,
+  //         });
+  //       }
+  //     } else {
+  //       toast({
+  //         title: `User not registered !!!`,
+  //         status: "error",
+  //         duration: 1500,
+  //         position: "top",
+  //         isClosable: true,
+  //       });
+  //     }
+  //     setEmail("");
+  //     setPassword("");
+  //   };
   useEffect(() => {
     if (isAuth) {
       toast({
@@ -128,10 +206,7 @@ const  Login =()=> {
             color="#3182ce"
             size="lg"
           /> */}
-        <InfinitySpin 
-            width='200'
-            color="#4fa94d"
-        />
+          <InfinitySpin width="200" color="#4fa94d" />
         </Flex>
       ) : (
         <Flex
@@ -140,6 +215,7 @@ const  Login =()=> {
           direction="column"
           textAlign="left"
         >
+          <Navbar type="list" />
           <Heading mt="10" as="h2" size="lg">
             Sign In
           </Heading>
@@ -197,6 +273,7 @@ const  Login =()=> {
             </FormHelperText>
 
             <Button
+              //   onClick={SendSignInRequest}
               onClick={SendSignInRequest}
               w={"100%"}
               h={"40px"}
@@ -244,6 +321,6 @@ const  Login =()=> {
       )}
     </>
   );
-}
+};
 
 export default Login;

@@ -1,0 +1,6 @@
+export const Addchild = "Addchild"
+export const AddRoom = "AddRoom"
+export const AddAdult = "AddAdult"
+export const Reducechild = "Reducechild"
+export const ReduceRoom = "ReduceRoom"
+export const Reduceadult = "Reduceadult"

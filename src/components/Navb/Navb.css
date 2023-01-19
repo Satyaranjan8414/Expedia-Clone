@@ -1,0 +1,58 @@
+.NavbContainer{
+    display: flex;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 1.5rem;  
+    gap: 24px;
+    /* border: 1px solid gold;  */
+    box-sizing: border-box;
+}
+
+
+
+.NavbContainer > div > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    border: none;
+    background: #fff;
+    outline: none;
+    color: #343b53;
+    /* border: 1px solid orange; */
+}
+
+
+.NabContainerSearchicon{
+    display: none;
+}
+
+.navUserCircleIcon{
+    position: relative;
+}
+
+
+
+
+@media all and (max-width:991px){
+    .NavbContainer > div > button{
+        font-size: 1.4rem;
+      }
+    
+}
+
+
+@media all and (max-width:575px){
+    .NabContainerSearchicon{
+        display: block;
+        position: relative;
+    }
+ 
+ 
+    .NavbContainer > div > button{
+      font-size: 1.2rem;
+    }
+ 
+ }
+
