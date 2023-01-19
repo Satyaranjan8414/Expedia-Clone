@@ -1,22 +1,13 @@
-// import React from "react";
-
-// const Home = () => {
-//   return (
-//     <div className={home.Home}>
-//       <div className={home.homeWrapper}></div>
-//     </div>
-//   );
-// };
 import React from "react";
 import home from "./Home.module.css";
-import { Navbar } from "../../components/navbar/Navbar";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
 
 
 const Home = () => {
   return (
     <div className={home.Home}>
-      <Navbar />
+      {<Navbar />}
       <div className={home.homeWrapper}>
         <Header />
       </div>
@@ -24,4 +15,4 @@ const Home = () => {
   );
 };
 
-// export default Home;
+export default Home;
