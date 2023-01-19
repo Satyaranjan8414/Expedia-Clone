@@ -1,0 +1,54 @@
+
+.innerTabsContain {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    margin: 100px auto 0;
+    word-break: break-all;
+    border: 1px solid #d7d4d2;
+    border-radius: 10px;
+    padding: 0px 20px;
+    max-width: 90%;
+    margin: 25px auto;
+  }
+  
+  .innerBlockTabs {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: left;
+  }
+  
+  .innertabs {
+    text-align: center;
+    padding: 1% 1%;
+    width: 7%;
+    cursor: pointer;
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+    border-radius: 5px;
+  }
+  
+  .active-innertabs {
+    color: #3662d8;
+    background-color: #becdf8;
+  }
+  
+  .innerContainerTabs {
+    flex-grow: 1;
+  }
+  
+  .innercontent {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .active-innercontent {
+    display: block;
+  }

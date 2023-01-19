@@ -1,0 +1,118 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header{
+  padding: 48px 24px 16px;
+}
+
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  word-break: break-all;
+  border: 1px solid #d7d4d2;
+  border-radius: 10px;
+  max-width: 1247px;
+  margin: auto;
+}
+
+.blockTabs {
+  display: flex;
+  width: 25%;
+  margin: 0 auto;
+  /* border-bottom: 1px solid #d7d4d2; */
+  /* border: 1px solid rebeccapurple; */
+  justify-content: center;
+}
+
+
+.blockTabs >  p {
+  color: #343b53;
+  font-weight: 600;
+}
+
+.blockTabsContainer{
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 1px solid #d7d4d2;
+ padding-top: 0.6rem;
+}
+
+.tabs {
+  text-align: center;
+  padding: 1% 0;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+
+.tabs:hover {
+  border-bottom: 3px solid #3662d8;
+}
+
+.active-tabs {
+  background: white;
+  border-bottom: 3px solid #3662d8;
+}
+
+.containerTabs {
+  flex-grow: 1;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.active-content {
+  display: block;
+}
+
+
+
+
+
+
+@media all and (max-width:978px){
+   .blockTabs{
+    width: 35%;
+   }
+     
+}
+
+
+
+@media all and (max-width:593px){
+  .blockTabs{
+    width: 55%;
+    transition: 3s;
+   }
+
+
+   .header{
+    padding: 20px 0px;
+   }
+
+
+   .tabsContainer {
+    border-top: 1px solid #d7d4d2;
+    border-radius: 0;
+   }
+
+}
+
+

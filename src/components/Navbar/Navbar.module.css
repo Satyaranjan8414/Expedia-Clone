@@ -13,7 +13,7 @@
     border-bottom: 2px solid #c5c7ce;
     width: 100%;
    padding: 1rem 0px;
-    
+
 }
 
 .navbarWrapper{
@@ -21,7 +21,7 @@
     align-items: center;
     width: 100%;
     color: #343b53;
-    max-width: 1247px;
+    max-width: 1247px; 
 }
 
 .navbarLogo {
@@ -147,19 +147,49 @@
 
 
 .AfterSignup{
-    color: black;
+    color: #343b53;
     position: relative;
     transition: 5s;
 }
 
 .AfterSignup > span{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
 }
 
 
 .navB{
     display: none;
 }
+
+
+
+ /* ** ---- new navbar ---- ** */
+
+.AuthnewWrapperS{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #343b53;
+    max-width: 1247px; 
+}
+
+
+ .AuthNewNavbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+ }
+
+
+ .AuthNewNavbar > a {
+    width: 12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
 
 
 /* * ----- responsive ----- *  */
@@ -176,6 +206,10 @@
 
     .navB{
         display: flex;
+    }
+
+    .AuthNewNavbar > a{
+        width: 12vw;
     }
     
 }
@@ -206,7 +240,7 @@
     }
 
 
-    .navbarWrapper > div:first-child {
+    .navbarWrapper > .navbarLogo {
         width: 20%;
    }
    
@@ -214,27 +248,14 @@
        width: 100%;
        cursor: pointer;
    }
+
+
+   .AuthNewNavbar > a{
+    width: 15vw;
+}
  }
 
 
-
- /* ** ---- new navbar ---- ** */
-
- .AuthNewNavbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    
- }
-
-
- .AuthNewNavbar > a {
-    width: 14%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
 
 
 
