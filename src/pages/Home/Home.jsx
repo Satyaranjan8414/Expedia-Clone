@@ -1,3 +1,12 @@
+// import React from "react";
+
+// const Home = () => {
+//   return (
+//     <div className={home.Home}>
+//       <div className={home.homeWrapper}></div>
+//     </div>
+//   );
+// };
 import React from "react";
 import home from "./Home.module.css";
 import { Navbar } from "../../components/navbar/Navbar";
@@ -15,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+// export default Home;

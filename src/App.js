@@ -7,6 +7,12 @@ import { Navbar } from "./components/navbar/Navbar"
 function App() {
   return (
     <div >
+        {/* <h1>Hotel Travellia</h1>
+       <AllRoute/>
+
+      <Card/> */}
+<h1>Hello Satya's Team !!!</h1>
+<Cartdata/>
       <AllRoute />
 
       {/* <Card />
