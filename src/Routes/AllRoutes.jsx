@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home";
+import Bookearly from "../pages/Bookearly/Bookearly";
 // import Hotels from "./Hotels";
 // import SingleProduct from "./SingleProduct";
 // import CheckoutPage from "./CheckoutPage";
@@ -17,6 +18,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Pagenot />} />
+        <Route path="/bookearly" element={<Bookearly/>} /> 
       </Routes>
     </div>
   );

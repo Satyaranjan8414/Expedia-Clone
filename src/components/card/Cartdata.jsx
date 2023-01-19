@@ -45,9 +45,29 @@ export const Cartdata = () => {
                   style={{ width: "200px", borderRadius: "30%" ,height:"120px"}}
                 />
                 <div>
-                  <h3>City:{ele.city}</h3>
+                  {/* <h3>City:{ele.city}</h3>
                   <h3>Place : {ele.heading1}</h3>
-                  <h3>rating : {ele.rating}</h3>
+                  <h3>rating : {ele.rating}</h3> */}
+                  <div>
+                    <p>{ele.heading1}</p>
+                    <p>{ele.city}</p>
+                    <div>
+                      <p>Pool</p>
+                      <p>Hot Tub </p>
+                    </div>
+                    <p>{ele.text1}</p>
+                    <p>{ele.text2}</p>
+                    <div>
+                    <p>{ele.rating}</p>
+                    <p>{ele.review}</p>
+                    <p>{ele.no_of_reviews}</p>
+                    </div>
+                    <div>
+                      <p>{ele.price1}</p>
+                      <p>{ele.price2}</p>
+                    </div>
+                  </div>
+                  
                 </div>
               </CardWrapper>
             );
