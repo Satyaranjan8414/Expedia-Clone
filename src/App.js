@@ -12,6 +12,9 @@ function App() {
       {/* <Card />
       <h1>Hello Satya's Team !!!</h1>
       <Cartdata /> */}
+      
+        <AllRoute/>
+        
     </div>
   );
 }

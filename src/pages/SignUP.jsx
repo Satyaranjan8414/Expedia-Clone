@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { AiFillApple } from "react-icons/ai"; // FcGoogle
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, shallowEqual, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Loginfunction } from "../Redux/AuthContext/action";
-import { InfinitySpin } from "react-loader-spinner";
-
+import { SignUpFunction } from "../Redux/AuthContext/action";
 import {
   Box,
   Button,
@@ -18,195 +16,94 @@ import {
   Heading,
   Input,
   Spinner,
+  Select,
   Text,
   useMediaQuery,
   useToast,
 } from "@chakra-ui/react";
-import axios from "axios";
-import { Navbar } from "../components/navbar/Navbar";
 
-const Login = () => {
+export default function CreateAccount() {
   const [isLoading, setIsLoading] = useState(true);
-  const [userObj, setUserObj] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [userType, setUserType] = useState("");
 
-  //   const { userData, isAuth, isError } = useSelector((state) => {
-  //     return {
-  //       userData: state.AuthReducer.userData,
-  //       isAuth: state.AuthReducer.isAuth,
-  //       isError: state.AuthReducer.isError,
-  //     };
-  //   }, shallowEqual);
-
-  //   const dispatch = useDispatch();
-  //   const navigate = useNavigate();
-  //   const toast = useToast();
-  const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
-  const { userData, isAuth, isError } = useSelector((state) => {
-    return {
-      userData: state.AuthReducer.userData,
-      isAuth: state.AuthReducer.isAuth,
-      isError: state.AuthReducer.isError,
-    };
-  }, shallowEqual);
+  const { userData, successfullyCreated, createAccountError } = useSelector(
+    (state) => {
+      return {
+        userData: state.AuthReducer.userData,
+        successfullyCreated: state.AuthReducer.successfullyCreated,
+        createAccountError: state.AuthReducer.createAccountError,
+      };
+    },
+    shallowEqual
+  );
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
-   const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
+  const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 500);
   }, []);
 
-  //   useEffect(() => {
-  //     if (isAuth) {
-  //       toast({
-  //         title: `LogIn Successfull`,
-  //         status: "success",
-  //         duration: 500,
-  //         position: "top",
-  //         isClosable: true,
-  //       });
-  //       setTimeout(() => {
-  //         navigate("/");
-  //       }, 1500);
-  //     }
-  //   }, [isAuth]);
-
-  //   useEffect(() => {
-  //     axios
-  //       .get("https://636b1db9b10125b78feba23b.mockapi.io/profile")
-  //       .then((response) => {
-  //         setUserObj(response.data);
-  //       })
-  //       .catch((e) => {
-  //         console.log(e);
-  //       });
-  //   }, []);
-
-  //   const SendSignInRequest = () => {
-  //     let check;
-
-  //     let checkEmail = userObj.filter((el) => {
-  //       return el.email === email;
-  //     });
-
-  //     if (checkEmail.length > 0) {
-  //       check = userObj.filter((el) => {
-  //         return el.email === email && el.password === password;
-  //       });
-  //       //console.log(check[0]);
-
-  //       if (check.length > 0) {
-  //         dispatch(
-  //           Loginfunction({
-  //             ...check[0],
-  //           })
-  //         );
-  //       } else if (check.length === 0) {
-  //         toast({
-  //           title: `Wrong Password !!!`,
-  //           status: "error",
-  //           duration: 1500,
-  //           position: "top",
-  //           isClosable: true,
-  //         });
-  //       }
-  //     } else {
-  //       toast({
-  //         title: `User not registered !!!`,
-  //         status: "error",
-  //         duration: 1500,
-  //         position: "top",
-  //         isClosable: true,
-  //       });
-  //     }
-  //     setEmail("");
-  //     setPassword("");
-  //   };
   useEffect(() => {
-    if (isAuth) {
+    if (successfullyCreated) {
       toast({
-        title: `LogIn Successfull`,
+        title: `Account Created Successfull`,
         status: "success",
         duration: 2000,
         position: "top",
         isClosable: true,
       });
       setTimeout(() => {
-        navigate("/");
-      }, 1500);
+        navigate("/login");
+      }, 2000);
     }
-  }, [isAuth]);
+  }, [successfullyCreated]);
 
   useEffect(() => {
-    axios
-      .get("https://636b1db9b10125b78feba23b.mockapi.io/profile")
-      .then((response) => {
-        setUserObj(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
-
-  const SendSignInRequest = () => {
-    let check;
-
-    let checkEmail = userObj.filter((el) => {
-      return el.email === email;
-    });
-
-    if (checkEmail.length > 0) {
-      check = userObj.filter((el) => {
-        return el.email === email && el.password === password;
-      });
-      //console.log(check[0]);
-
-      if (check.length > 0) {
-        dispatch(
-          Loginfunction({
-            ...check[0],
-          })
-        );
-      } else if (check.length === 0) {
-        toast({
-          title: `Wrong Password !!!`,
-          status: "error",
-          duration: 2000,
-          position: "top",
-          isClosable: true,
-        });
-      }
-    } else {
+    if (createAccountError) {
       toast({
-        title: `User not registered !!!`,
+        title: `Something Went Wrong !!!`,
         status: "error",
         duration: 2000,
         position: "top",
         isClosable: true,
       });
     }
+  }, [createAccountError]);
+
+  function SendSignInRequest() {
+    dispatch(
+      SignUpFunction({
+        email: email,
+        password: password,
+        userName: userName,
+        userType: userType,
+      })
+    );
     setEmail("");
     setPassword("");
-  };
+    setUserName("");
+    setUserType("");
+  }
 
   return (
     <>
       {isLoading ? (
         <Flex justify="center" mt={"5"}>
-          {/* <Spinner
+          <Spinner
             thickness="5px"
             speed="0.65s"
             emptyColor="gray.200"
             color="#3182ce"
             size="lg"
-          /> */}
-          <InfinitySpin width="200" color="#4fa94d" />
+          />
         </Flex>
       ) : (
         <Flex
@@ -215,9 +112,8 @@ const Login = () => {
           direction="column"
           textAlign="left"
         >
-          <Navbar type="list" />
           <Heading mt="10" as="h2" size="lg">
-            Sign In
+            Create an account
           </Heading>
 
           <FormControl
@@ -228,6 +124,19 @@ const Login = () => {
             mt={5}
             isRequired
           >
+            {/* Name */}
+            <FormLabel htmlFor="userName">Enter Your Name</FormLabel>
+            <Input
+              onChange={(e) => setUserName(e.target.value)}
+              placeholder="Enter User Name"
+              value={userName}
+              w={"100%"}
+              h={"40px"}
+              border={`2px solid`}
+              type={"text"}
+              mb={"8px"}
+              id="userName"
+            />
             {/* email */}
             <FormLabel htmlFor="email">Enter Email</FormLabel>
             <Input
@@ -243,7 +152,21 @@ const Login = () => {
             <FormHelperText mb={"8px"}>
               We'll never share your email.
             </FormHelperText>
-
+            {/* UserType */}
+            <FormLabel htmlFor="userType">User Type</FormLabel>
+            <Select
+              onChange={(e) => setUserType(e.target.value)}
+              width={"100%"}
+              h={"40px"}
+              border={`2px solid`}
+              mb={"8px"}
+              value={userType}
+              id="userType"
+            >
+              <option value="">Choose User Type</option>
+              <option value="customer">Customer</option>
+              <option value="admin">Admin</option>
+            </Select>
             {/* password */}
             <FormLabel htmlFor="password">Enter Password</FormLabel>
             <Input
@@ -268,21 +191,25 @@ const Login = () => {
               </span>{" "}
               and{" "}
               <span style={{ color: "blue", cursor: "pointer" }}>
-                TravelliaHOTELS Rewards
+                allSeasonHOTELS Rewards
               </span>
             </FormHelperText>
 
             <Button
-              //   onClick={SendSignInRequest}
               onClick={SendSignInRequest}
               w={"100%"}
               h={"40px"}
               mt={4}
               colorScheme="blue"
               type="submit"
-              disabled={email === "" || password === ""}
+              disabled={
+                email === "" ||
+                password === "" ||
+                userName === "" ||
+                userType === ""
+              }
             >
-              Sign In
+              Create Account
             </Button>
 
             <Text mt={"15px"} display="flex" justifyContent={"center"}>
@@ -292,9 +219,9 @@ const Login = () => {
             </Text>
 
             <Text mt={"15px"} display="flex" justifyContent={"center"}>
-              Don't have an account?{" "}
-              <Link to={"/signup"} style={{ color: "blue" }}>
-                Create Here...
+              Already have an account?
+              <Link to={"/login"} style={{ color: "blue" }}>
+                Sign In
               </Link>
             </Text>
 
@@ -321,6 +248,4 @@ const Login = () => {
       )}
     </>
   );
-};
-
-export default Login;
+}
