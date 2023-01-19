@@ -8,6 +8,21 @@
     background-color: #ffffff;
     border-radius: 0.5rem;
     padding: 1rem 0;
+
+}
+
+
+
+.navMoreOptionLeft{
+    position: absolute;
+    top: 37px;
+    left: -180px;
+    width: 21rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    /* border: 1px solid rebeccapurple; */
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
 }
 
 

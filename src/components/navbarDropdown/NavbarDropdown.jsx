@@ -1,6 +1,7 @@
 import "./NavDropdown.css";
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const NavbarDropdown = () => {
   return (
@@ -21,7 +22,9 @@ export const NavbarDropdown = () => {
           </div>
         </div>
         <div className="paddingNavDrop">
-          <button className="navDropdownSignBtn">Sign in</button>
+          <Link to="login">
+            <button className="navDropdownSignBtn">Sign in</button>
+          </Link>
           <div className="navDLogIn">
             <span>Create a Free account</span>
           </div>
