@@ -2,6 +2,7 @@ import React from "react";
 import home from "./Home.module.css";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
+import BookearlyImage from "../Bookearly/BookearlyImage"
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <div className={home.homeWrapper}>
         <Header />
       </div>
+      <BookearlyImage/>
     </div>
   );
 };
