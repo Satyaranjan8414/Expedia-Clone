@@ -3,8 +3,12 @@ import { FaMapMarkerAlt, FaUserAlt } from "react-icons/fa";
 import { BiCalendarEvent } from "react-icons/bi";
 import { shallowEqual, useSelector } from "react-redux";
 import { HeaderTravellers } from "../HeaderTravellers/HeaderTravellers";
+import { memo, useState } from "react";
+import { useRef } from "react";
 
-const Stays = () => {
+const Stays = memo(() => {
+  const triggerTravel = useRef(false);
+
   const { Room, Child, Adult } = useSelector((value) => {
     return {
       Room: value.FamilyReducer.Room,
@@ -13,10 +17,17 @@ const Stays = () => {
     };
   }, shallowEqual);
 
+  const [triggerTravellers, setTravellers] = useState(false);
+
+  const traTrigger = (e) => {
+    e.preventDefault();
+    setTravellers((prev) => !prev);
+  };
+
   return (
     <div className={stay.Stays}>
       <div className={stay.staysContainer}>
-        <form className={stay.staysForm}>
+        <div className={stay.staysForm}>
           <div className={stay.staysFormsWrapper}>
             <div className={stay.fistdiv}>
               <div className={stay.staysLogo1}>
@@ -59,11 +70,15 @@ const Stays = () => {
               <div className={stay.staysLogo1}>
                 <FaUserAlt />
               </div>
-              <div className={stay.staysBtn}>
+              <div onClick={traTrigger} className={stay.staysBtn}>
                 <h6>Travellers</h6>
-                <div>1room.2tarvellers</div>
+                {`Room ${Room} Adults ${Adult} children ${Child}`}
               </div>
-              <HeaderTravellers />
+              <div>
+                {triggerTravellers && (
+                  <HeaderTravellers traTrigger={traTrigger} />
+                )}
+              </div>
             </div>
           </div>
           <div className={stay.staysCheckbox}>
@@ -81,10 +96,10 @@ const Stays = () => {
           <div className={stay.staysFormSearch}>
             <button>Search</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
-};
+});
 
 export default Stays;

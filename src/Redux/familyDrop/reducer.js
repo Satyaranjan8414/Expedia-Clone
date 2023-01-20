@@ -1,14 +1,13 @@
 import { AddRoom, AddAdult, Addchild, Reducechild, ReduceRoom, Reduceadult } from "./actionType";
 
 const intialState = {
-    Room: 0,
-    Adult: 0,
+    Room: 1,
+    Adult: 2,
     Child: 0
 }
 
 
 const reducer = (state = intialState, { type, payload }) => {
-    console.log(state.Room)
     switch (type) {
         case AddRoom: {
             return { ...state, Room: state.Room + payload }
@@ -30,7 +29,7 @@ const reducer = (state = intialState, { type, payload }) => {
             return { ...state, Child: state.Child + payload }
         }
 
-        case Addchild: {
+        case Reducechild: {
             return { ...state, Child: state.Child - payload }
         }
 
