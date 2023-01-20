@@ -1,4 +1,4 @@
-import {
+    import {
     Container,
     Box,
     Image,
@@ -9,8 +9,8 @@ import {
     Flex,
     Spacer,
   } from "@chakra-ui/react";
- 
-
+  import Logo from "../../Images/profile.png"
+  
   function Footer() {
     const hoverColor = "#3182ce";
   
@@ -30,8 +30,8 @@ import {
                 w="80px"
                 h="80px"
                 borderRadius="50%"
-                
-                alt="Travellia"
+                src={Logo}
+                alt="TravelliaHotels"
               />
             </Box>
             <Spacer />
@@ -63,6 +63,29 @@ import {
               </Stack>
             </Box>
             <Spacer />
+            <Box mb="50">
+              <Stack spacing={3}>
+                <Heading as="h6" size="xs" textAlign={"left"}>
+                  Terms and policies
+                </Heading>
+                <MenuItem name={"Privacy Statement"} />
+                <MenuItem name={"Terms of use"} />
+                <MenuItem name={" Vrbo terms and conditions"} />
+              </Stack>
+            </Box>
+            <Spacer />
+            <Box mb="50">
+              <Stack spacing={3}>
+                <Heading as="h6" size="xs" textAlign={"left"}>
+                  Help
+                </Heading>
+                <MenuItem name={"Support"} />
+                <MenuItem name={"Change or cancel your booking"} />
+                <MenuItem name={"Refund process and timelines"} />
+                <MenuItem name={" Book a flight using an airline credit"} />
+                <MenuItem name={" International travel documents"} />
+              </Stack>
+            </Box>
           </Flex>
         </Box>
         <Container
@@ -79,9 +102,9 @@ import {
               />
             </Center>
             <Text fontSize="xs">
-              © 2023 allSeasonHOTELS, Inc., an allSeasonHOTELS Group company, All
-              rights reserved. TravelliaHOTELS and the Logo are trademarks or
-              registered trademarks of TravelliaHOTELS, Inc.
+              © 2023 travelliaHOTELS, Inc., an travelliaHOTELS Group company, All
+              rights reserved. travelliaHOTELS and the Logo are trademarks or
+              registered trademarks of travelliaHOTELS, Inc.
             </Text>
           </Box>
         </Container>

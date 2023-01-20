@@ -21,6 +21,7 @@ import {
   useMediaQuery,
   useToast,
 } from "@chakra-ui/react";
+import { Navbar } from "../components/Navbar/Navbar";
 
 export default function CreateAccount() {
   const [isLoading, setIsLoading] = useState(true);
@@ -112,6 +113,7 @@ export default function CreateAccount() {
           direction="column"
           textAlign="left"
         >
+          <Navbar type="list" />
           <Heading mt="10" as="h2" size="lg">
             Create an account
           </Heading>
@@ -185,13 +187,13 @@ export default function CreateAccount() {
             </Checkbox>
             <br />
             <FormHelperText fontSize={"15px"} mb={"8px"}>
-              By signing in, I agree to the allSeasonHOTELS{" "}
+              By signing in, I agree to the TravelliaHOTELS{" "}
               <span style={{ color: "blue", cursor: "pointer" }}>
                 Terms and Conditions, Privacy Statement
               </span>{" "}
               and{" "}
               <span style={{ color: "blue", cursor: "pointer" }}>
-                allSeasonHOTELS Rewards
+                TravelliaHOTELS Rewards
               </span>
             </FormHelperText>
 
