@@ -13,7 +13,7 @@ const CardList = () => {
 
     
     useEffect(()=>{
-        dispatch(getHotels)
+        dispatch(getHotels("pune"))
     },[]);
 
   return (

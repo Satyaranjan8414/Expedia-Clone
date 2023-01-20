@@ -14,10 +14,8 @@ import { reducer as HotelsReducer } from "./Hotels/reducer";
 
 const rootRuducer = combineReducers({ AuthReducer, FamilyReducer,HotelsReducer});
 
-import { reducer as FamilyReducer } from "./familyDrop/reducer";
-import {reducer as HotelReducer} from "./HotelsData/reducer";
 
-const rootRuducer = combineReducers({ AuthReducer, FamilyReducer, HotelReducer });
+
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
