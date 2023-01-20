@@ -23,7 +23,7 @@ export const SignUpFunction = (data) => (dispatch) => {
     .post("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan", data)
     .then((response) => {
       dispatch({ type: CREATE_SUCCESS, payload: response.data });
-      console.log(response);
+      // console.log("res",response);
     })
     .catch((e) => {
       dispatch({ type: CREATE_FAILURE });

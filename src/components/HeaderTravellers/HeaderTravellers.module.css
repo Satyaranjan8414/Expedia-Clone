@@ -7,10 +7,10 @@
 
 .headerTravellrs{
     position: absolute;
-    top: 55px;
+    top: 63px;
     right: 0;
     background-color: #fff;
-    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     width: 350px;
     text-align: left;
     padding: 1rem 1.5rem;
@@ -45,3 +45,32 @@
     font-size: 1rem;
     font-weight: 600;
 }
+
+
+.headerTravellrsBtnDone{
+    margin-top: 45px;
+    text-align: center;
+}
+
+
+.headerTravellrsBtnDone > button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #3662d7;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+.headerTravellrs button:disabled{   
+    cursor: not-allowed ;
+}
+
+
+.staticd{
+    display: none;
+}
+
+
+

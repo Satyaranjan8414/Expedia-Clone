@@ -109,9 +109,12 @@
 
 
    .tabsContainer {
+    border: none;
     border-top: 1px solid #d7d4d2;
     border-radius: 0;
    }
+
+  
 
 }
 
