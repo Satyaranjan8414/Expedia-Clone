@@ -6,21 +6,23 @@ import Pagenot from "../pages/Pagenot";
 import Login from "../pages/Login";
 import CreateAccount from "../pages/SignUP";
 import Footer from "../components/Footer/Footer";
+
 import Card from "../components/card/Card";
 import Hotels from "../pages/Hotels/Hotels";
 import SingleHotel from "../components/SingleHotel/SingleHotel";
 import { Cartdata } from "../components/card/Cartdata";
+
 const AllRoutes = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        
         
         <Route path="/login" element={<Login />} />
-        
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer/>}/>
+       
         
         <Route path="*" element={<Pagenot />} />
         <Route path="/bookearly" element={<Bookearly/>} /> 

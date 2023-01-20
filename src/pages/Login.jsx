@@ -67,9 +67,10 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("https://636b1db9b10125b78feba23b.mockapi.io/profile")
+      .get("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan")
       .then((response) => {
-        setUserObj(response.data);
+        setUserObj(response.data.items);
+        console.log("login res",response.data.items)
       })
       .catch((e) => {
         console.log(e);
@@ -80,7 +81,12 @@ const Login = () => {
     let check;
 
     let checkEmail = userObj.filter((el) => {
+      if(el.email===email)
+      {
+        console.log("email",email)
+      }
       return el.email === email;
+      
     });
 
     if (checkEmail.length > 0) {
@@ -121,14 +127,14 @@ const Login = () => {
     <>
       {isLoading ? (
         <Flex justify="center" mt={"5"}>
-          {/* <Spinner
+          <Spinner
             thickness="5px"
             speed="0.65s"
             emptyColor="gray.200"
             color="#3182ce"
             size="lg"
-          /> */}
-          <InfinitySpin width="200" color="#4fa94d" />
+          />
+          {/* <InfinitySpin width="200" color="#4fa94d" /> */}
         </Flex>
       ) : (
         <Flex
@@ -184,7 +190,7 @@ const Login = () => {
             </Checkbox>
             <br />
             <FormHelperText fontSize={"15px"} mb={"8px"}>
-              By signing in, I agree to the allSeasonHOTELS{" "}
+              By signing in, I agree to the TravelliaHOTELS{" "}
               <span style={{ color: "blue", cursor: "pointer" }}>
                 Terms and Conditions, Privacy Statement
               </span>{" "}
@@ -202,7 +208,7 @@ const Login = () => {
               mt={4}
               colorScheme="blue"
               type="submit"
-              disabled={email === "" || password === ""}
+              isDisabled={email === "" || password === ""}
             >
               Sign In
             </Button>

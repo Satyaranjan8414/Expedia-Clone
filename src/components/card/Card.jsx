@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 
@@ -82,4 +83,15 @@ export default function Card({hotel}) {
   );
 }
 
+
+
+import React from 'react'
+
+const Card = () => {
+  return (
+    <div>Card</div>
+  )
+}
+
+export default Card
 
