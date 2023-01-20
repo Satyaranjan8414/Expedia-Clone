@@ -7,10 +7,18 @@ import {
 import thunk from "redux-thunk";
 
 import { reducer as AuthReducer } from "./AuthContext/reducer";
+
+import { reducer as FamilyReducer } from "./familyDrop/reducer"
+import { reducer as HotelsReducer } from "./Hotels/reducer";
+
+
+const rootRuducer = combineReducers({ AuthReducer, FamilyReducer,HotelsReducer});
+
 import { reducer as FamilyReducer } from "./familyDrop/reducer";
 import {reducer as HotelReducer} from "./HotelsData/reducer";
 
 const rootRuducer = combineReducers({ AuthReducer, FamilyReducer, HotelReducer });
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
