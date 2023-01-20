@@ -208,7 +208,7 @@ const Login = () => {
               mt={4}
               colorScheme="blue"
               type="submit"
-              disabled={email === "" || password === ""}
+              isDisabled={email === "" || password === ""}
             >
               Sign In
             </Button>
