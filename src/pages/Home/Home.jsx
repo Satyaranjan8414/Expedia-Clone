@@ -2,6 +2,10 @@ import React from "react";
 import home from "./Home.module.css";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
+
+import BookearlyImage from "../Bookearly/BookearlyImage"
+
+
 import { Reward } from "../../components/Reward/Reward";
 import { ExpediaApp } from "../../components/expediaApp/ExpediaApp";
 
@@ -12,6 +16,7 @@ const Home = () => {
       <div className={home.homeWrapper}>
         <Header />
       </div>
+      <BookearlyImage/>
       <div>
         <Reward />
       </div>
