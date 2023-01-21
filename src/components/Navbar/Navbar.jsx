@@ -66,9 +66,9 @@ export const Navbar = ({ type }) => {
           <div>
             <span>Tips</span>
           </div>
-          <div>
+          {/* <div>
             <Link to="signinadmin"><span>Admin</span></Link>
-          </div>
+          </div> */}
 
           <div className={navbar.Navbellicon}>
             <span>

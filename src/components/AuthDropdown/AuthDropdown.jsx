@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getLocalData } from "../../utils/accessLocalStorage";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { SignOutFun } from "../../Redux/AuthContext/action";
+import {Link as RouterLink} from "react-router-dom";
 
 export const AuthDropdown = ({ setAuth }) => {
   // const Navigate = useNavigate();
@@ -65,7 +66,7 @@ export const AuthDropdown = ({ setAuth }) => {
           </div>
 
           <div>
-            <p>Admin</p>
+            <p><RouterLink to="/signinadmin">Admin</RouterLink></p>
           </div>
         </div>
 
