@@ -1,0 +1,30 @@
+.cardContainer{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    padding: 1%;
+
+}
+.imgItem{
+    border: 1px solid red;
+    background-color: teal;
+    height: 200px;
+    width: 300px;
+    object-fit: fill;
+}
+
+
+.heading1{
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid red;
+    width: 100%;
+}
+.heading2{
+    font-size: 15px;
+    color: grey;
+}
+.text1{
+
+}

@@ -1,0 +1,34 @@
+.container{
+    background-color: #f8f5f4;
+    border:1px solid red ;
+    width: 98%;
+    margin: auto;
+   display: flex;
+}
+
+.contentDiv{
+    
+    border:1px solid red ;
+    width: 85%;
+}
+.advertiseDiv{
+    border:1px solid red ;   
+    width: 15%;
+}
+.dataDisplayContainer
+{
+    border:1px solid red ; 
+   
+    display: flex;
+    justify-content: center;
+   
+    width: 100%;  
+}
+.filterContainer{
+    border:1px solid red ; 
+    width: 25%;
+}
+.displayListContainer{
+    border:1px solid red ; 
+    width: 71%;
+}

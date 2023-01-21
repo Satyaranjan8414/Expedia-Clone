@@ -15,5 +15,10 @@ SignUp->
         Customer
         Admin
     
+<!-- nitin added dependencies -->
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion chakra-ui-carousel
+npm install react-slick --save/;
 
-    
+day-4
+
+

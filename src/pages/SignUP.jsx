@@ -204,7 +204,7 @@ export default function CreateAccount() {
               mt={4}
               colorScheme="blue"
               type="submit"
-              disabled={
+              isDisabled={
                 email === "" ||
                 password === "" ||
                 userName === "" ||
