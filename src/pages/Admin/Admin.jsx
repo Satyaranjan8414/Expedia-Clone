@@ -106,7 +106,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           {link.name}
         </NavItem>
       ))}
-      <FixedPlugin/>
+      {/* <FixedPlugin/> */}
     </Box>
   );
 };
