@@ -21,7 +21,6 @@ const AllRoutes = () => {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
-        <Route path="/footer" element={<Footer />} />
 
         <Route path="*" element={<Pagenot />} />
         <Route path="/bookearly" element={<Bookearly />} />
@@ -31,6 +30,8 @@ const AllRoutes = () => {
         <Route path="/card" element={<Card />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/payment" element={<Payemnt />} />
+        <Route path="/footer" element={<Footer/>}/>
+        
       </Routes>
     </div>
   );
