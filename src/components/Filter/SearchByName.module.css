@@ -1,0 +1,33 @@
+
+.SearchByContainer{
+    text-align: center;
+    margin: auto;
+    padding: 10% 0%;
+    border-bottom: 2px solid grey;
+    margin-bottom: 5%;
+}
+.SearchBox{
+    width: 240px ;
+    height:45px ;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    pad: 1% 0%;
+    border: 1px solid grey;
+    padding-left: 8%;
+   
+}
+.SearchInput{
+width: 170px;
+height: 43px;
+border: none;
+outline: none;
+font-size: 18px;
+padding-left: 2%;
+}
+.SearchHeading{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 3%;
+}

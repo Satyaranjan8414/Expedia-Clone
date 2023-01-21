@@ -1,88 +1,81 @@
-
 import React, { useState } from "react";
 
-
-import {
-
-  Center,
-  Flex,
-
-  Stack,
-  
-  useColorModeValue,
-
-} from '@chakra-ui/react';
+import { Center, Flex, Stack, useColorModeValue } from "@chakra-ui/react";
 import CardCarousel from "./CardCarousel";
+import Style from "./Card.module.css";
 
+export default function Card({ hotel }) {
+  const handleCardClick = () => {};
+  const price2 = hotel.price2.split("");
+  price2.splice(price2.length - 3,0,",")
 
+  //for discount
+  function getRandomItem(arr) {
 
-export default function Card({hotel}) {
-  
+    // get random index value
+    const randomIndex = Math.floor(Math.random() * arr.length);
+
+    // get random item
+    const item = arr[randomIndex];
+
+    return item;
+}
+  const discountArray=[10,20,30,40,50];
+  const result = getRandomItem(discountArray);
+
   return (
     <Center py={2}>
       <Stack
-        borderWidth="1px"
-        borderRadius="lg"
-        border="1px solid red"
-        w={{ sm: '100%', md: '99%' }}
-        height={{ sm: '276px', md: '14rem' }}
-        direction={{ base: 'column', md: 'row' }}
-        bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'2xl'}
-        padding={1}>
-        <Flex flex={1} height="200px" wid bg="blue.200" borderRadius={'10px'}>
-        <CardCarousel prop={hotel}/>
-         
-        </Flex>
+        backgroundColor={"white"}
+        border="1px solid lightgrey"
+        borderRadius={"10px"}
+        cursor="pointer"
+        onClick={handleCardClick}
+        direction={"row"}
+      >
         <Stack
-        width="250%"
-        border="1px solid red"
+          direction={"row"}
+          
+          backgroundColor={"teal.100"}
+          borderRadius="10px"
+          height={"180px"}
         >
-        <h1>heading</h1>
+          <CardCarousel prop={hotel} />
         </Stack>
-       
-         
-         
 
-          <Stack
-            width={'100%'}
-            mt={'2rem'}
-            direction={'row'}
-            padding={2}
-            justifyContent={'space-between'}
-            alignItems={'center'}>
-            {/* <Button
-              flex={1}
-              fontSize={'sm'}
-              rounded={'full'}
-              _focus={{
-                bg: 'gray.200',
-              }}>
-              Message
-            </Button>
-            <Button
-              flex={1}
-              fontSize={'sm'}
-              rounded={'full'}
-              bg={'blue.400'}
-              color={'white'}
-              boxShadow={
-                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-              }
-              _hover={{
-                bg: 'blue.500',
-              }}
-              _focus={{
-                bg: 'blue.500',
-              }}>
-              Follow
-            </Button> */}
-            </Stack>
+        <Stack lineHeight={"normal"}>
+          <h1 className={Style.heading1}>{hotel.heading1}</h1>
+          <h1 className={Style.heading2}>{hotel.heading2}</h1>
+         <div>
+         <h1 className={Style.text1}> {hotel.text1.length>0? hotel.text1:`The price was Rs${+(hotel.price2)+2000}` } </h1>
+          <h1 className={Style.text2}>
+            {hotel.text2.length > 14
+              ? hotel.text2
+              : "Limited Time Offer - Start your day sunny side up with Complimentary Breakfast, Wi-Fi, Gym & Pool access."}
+          </h1>
+         </div>
+         <div className={Style.text3}>
+          <p>{hotel.text3}</p>
+          <p>{hotel.text4}</p>
+         </div>
+
+         <div className={Style.rating}>
+              <p>{hotel.rating}</p>
+              <p>{hotel.review}</p>
+              <p>{hotel.no_of_reviews}</p>
+         </div>
+        </Stack>
+
+        <Stack  width="25%" paddingRight={'0.6%'} className={Style.price}>
+          <div>
+          <h1 className={Style.leftRooms}> {hotel.heading3.length>0?hotel.heading3:`${result}% off`}</h1>
+          <h1 className={Style.price1}> {hotel.price1}</h1>
+          <h1 className={Style.price2}> Rs{price2.join("")} total</h1>
+          <p className={Style.taxesBanner}>includes taxes & fees</p>
+          </div>
+        </Stack>
       </Stack>
     </Center>
+    
   );
 }
-
-
-
-

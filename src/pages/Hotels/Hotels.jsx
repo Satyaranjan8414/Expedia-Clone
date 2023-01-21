@@ -9,11 +9,11 @@ import Style from "./Hotels.module.css";
 const Hotels = () => {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={Style.container}>
       {/* content div */}
         <div className={Style.contentDiv}>
-          {/* <Header /> */}
+          <Header />
           <div className={Style.dataDisplayContainer}>
             <div className={Style.filterContainer}>
             <Filter/>
