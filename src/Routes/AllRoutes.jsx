@@ -7,6 +7,11 @@ import Login from "../pages/Login";
 import CreateAccount from "../pages/SignUP";
 import CreateHotel from "../pages/CreateHotal/CreateHotal";
 import Footer from "../components/Footer/Footer";
+
+import SignIn from "../pages/Admin/Auth/SignIn";
+import Admin from "../pages/Admin/Admin";
+import SignUp from "../pages/Admin/Auth/SignUp";
+
 import Card from "../components/card/Card";
 import Hotels from "../pages/Hotels/Hotels";
 import SingleHotel from "../components/SingleHotel/SingleHotel";
@@ -15,6 +20,7 @@ import TopImages from "../components/SingleHotel/TopImages";  // for singleHotel
 import Location from "../components/SingleHotel/Location";    // for singleHotel Page test
 import Reviews from "../components/SingleHotel/Reviews";     // for SingleHotel Page  test
 import Payemnt from "../components/Payment/Payment";
+
 
 const AllRoutes = () => {
   return (
@@ -26,14 +32,15 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer/>}/>
-       
+
+        <Route path="/signinadmin" element={<SignIn/>}></Route>
+        <Route path="/admin" element={<Admin/>}></Route>
         <Route path="/bookearly" element={<Bookearly/>} /> 
         <Route path="/SingleHotel" element={<SingleHotel/>} /> 
         <Route path="/carddata" element={<Cartdata/> } /> 
         <Route path="/card" element={<Card/> } />
         <Route path="/hotels" element={<Hotels/>} />
         <Route path="*" element={<Pagenot />} />
-        <Route path="/hotels" element={<Hotels />} />
         <Route path="/payment" element={<Payemnt />} />
         
       </Routes>
