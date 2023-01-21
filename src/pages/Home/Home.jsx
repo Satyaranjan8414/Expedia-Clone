@@ -4,7 +4,6 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-
 import BookearlyImage from "../Bookearly/BookearlyImage";
 
 import { Reward } from "../../components/Reward/Reward";
@@ -24,9 +23,6 @@ const Home = () => {
       <div>
         <ExpediaApp />
       </div>
-
-      <div style={{ padding: "500px" }}></div>
-      <Footer />
       <div style={{ padding: "30px" }}></div>
       <div>
         <BookearlyImage />

@@ -2,17 +2,18 @@ import "./AuthDropdown.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { SIGNOUT } from "../../Redux/AuthContext/actionTypes";
-import React from "react";
-import { useToast, Button
-} from "@chakra-ui/react";
+import { useState } from "react";
+import { getLocalData } from "../../utils/accessLocalStorage";
+import { IoInformationCircleOutline } from "react-icons/io5";
+import { SignOutFun } from "../../Redux/AuthContext/action";
 
-export const AuthDropdown = () => {
-  const Navigate = useNavigate();
-  const hoverColor = "#3182ce";
+export const AuthDropdown = ({ setAuth }) => {
+  // const Navigate = useNavigate();
+  // const hoverColor = "#3182ce";
   const dispatch = useDispatch();
-  const toast = useToast();
+  // const toast = useToast();
 
-  //userData 
+  //userData
   const { userData, isAuth } = useSelector((state) => {
     return {
       userData: state.AuthReducer.userData,
@@ -20,32 +21,7 @@ export const AuthDropdown = () => {
     };
   }, shallowEqual);
 
-//signOut section
-  const handleSignout = (e) => {
-    setTimeout(() => {
-      Navigate("/signup");
-    }, 2000);
-
-    dispatch({ type: SIGNOUT });
-    toast({
-      title: "Signout Successfull !!!",
-      status: "success",
-      duration: 1000,
-      isClosable: true,
-      position: "top",
-    });
-  };
-
-import { useState } from "react";
-import { getLocalData } from "../../utils/accessLocalStorage";
-import { IoInformationCircleOutline } from "react-icons/io5";
-import { SignOutFun } from "../../Redux/AuthContext/action";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-
-export const AuthDropdown = ({ setAuth }) => {
   const data = getLocalData("userData");
-  let dispatch = useDispatch();
 
   const callSignout = () => {
     dispatch(SignOutFun);
@@ -56,8 +32,6 @@ export const AuthDropdown = ({ setAuth }) => {
     <div className="authDropdown">
       <div className="authDropdownWrapper" style={{ width: "100%" }}>
         <div className="authDropdownUserDetail" style={{ width: "100%" }}>
-          <h2>Hi , {userData.userName}</h2>
-          <h3>{userData.email}</h3>
           <h2>Hi , {data.userName}</h2>
           <h3>{data.email}</h3>
           <div className="authDropdownBlueMember">
@@ -96,16 +70,6 @@ export const AuthDropdown = ({ setAuth }) => {
         </div>
 
         <hr className="haderSperation" />
-
-        <div className="authdropdownSignout"><Button
-              w="100%"
-              colorScheme="blue"
-              onClick={(e) => {
-                handleSignout(e);
-              }}
-            >
-              Sign out
-            </Button></div>
         <div className="authdropdownSignout" onClick={callSignout}>
           SignOut
         </div>
@@ -113,3 +77,19 @@ export const AuthDropdown = ({ setAuth }) => {
     </div>
   );
 };
+
+//signOut section
+// const handleSignout = (e) => {
+//   setTimeout(() => {
+//     Navigate("/signup");
+//   }, 2000);
+
+//   dispatch({ type: SIGNOUT });
+//   toast({
+//     title: "Signout Successfull !!!",
+//     status: "success",
+//     duration: 1000,
+//     isClosable: true,
+//     position: "top",
+//   });
+// };
