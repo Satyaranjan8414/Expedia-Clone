@@ -44,9 +44,10 @@ export default function CardCarousel({prop}) {
   return (
     <Box
       position={'relative'}
-      height={'215px'}
+    
       maxHeight={'215px'}
-      borderRadius={'10px'}
+    //   borderRadius={'10px'}
+      borderLeftRadius={'10px'}
       width={'280px'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
@@ -65,7 +66,7 @@ export default function CardCarousel({prop}) {
       <IconButton
         aria-label="left-arrow"
         colorScheme="messenger"
-        backgroundColor="transparent"
+        opacity={'0.4'}
         borderRadius="full"
         position="absolute"
         left={side}
@@ -79,7 +80,7 @@ export default function CardCarousel({prop}) {
       <IconButton
         aria-label="right-arrow"
         colorScheme="messenger"
-        backgroundColor="transparent"
+        opacity={'0.4'}
         borderRadius="full"
         position="absolute"
         right={side}
@@ -98,6 +99,7 @@ export default function CardCarousel({prop}) {
             src={
               url
             }
+            onError={(event) => event.target.style.display = 'none'}
           />
         ))}
       </Slider>
