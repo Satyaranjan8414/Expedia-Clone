@@ -6,6 +6,7 @@ import {
   SIGNIN_FAILURE,
   SIGNIN_REQUEST,
   SIGNIN_SUCCESS,
+  SIGNOUT,
 } from "./actionTypes";
 
 export const Loginfunction = (data) => (dispatch) => {
@@ -14,6 +15,7 @@ export const Loginfunction = (data) => (dispatch) => {
   dispatch({ type: SIGNIN_SUCCESS, payload: data });
 
   dispatch({ type: SIGNIN_FAILURE });
+
 };
 
 export const SignUpFunction = (data) => (dispatch) => {
@@ -30,3 +32,9 @@ export const SignUpFunction = (data) => (dispatch) => {
       console.log(e);
     });
 };
+
+
+
+export const SignOutFun = (dispatch) => {
+  dispatch({ type: SIGNOUT })
+}

@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.PaymentSignin{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    margin-top: 22px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.paymentemail{
+    display: flex;
+    flex-direction: column;
+}
+
+.fapadding{
+    padding: 12px 15px;
+    border-radius: 60%;
+    background: #f0f3f5  ;
+}
+
+.signas{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #616161;
+}
