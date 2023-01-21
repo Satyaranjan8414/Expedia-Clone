@@ -19,24 +19,25 @@
 }
 
 .ExpediaAppImg{
-    flex: 3;
+    width: 35%;
 
 }
 
 
 .ExpediaAppImg > image  , .ExpediaAppQrCode > image{
     width: 100%;
+    object-fit:contain;
 }
 
 .ExpediaAppText{
-    flex: 4;
-      border: 1px solid rebeccapurple;
+    width: 40%;
+      /* border: 1px solid rebeccapurple; */
       padding: 24px 0px 24px 0px;
 }
 
 .ExpediaAppQrCode{
-    flex: 1.2;
-      border: 1px solid rebeccapurple;
+    width: 25%;
+    padding: 1rem 24px 0px 0px;
 }
 
 
@@ -55,6 +56,7 @@
 
 .ExpediaAppTextPoints > p {
    color: #343b53;
+   line-height: 1.125rem;
 }
 
 
@@ -67,9 +69,8 @@
 
 .ExpediaAppTextLinkSender{
     display: flex;
-    border: 1px solid rebeccapurple;
-    justify-content: space-around;
-    /* gap: 1rem; */
+    /* border: 1px solid rebeccapurple; */
+    gap: 1rem;
 }
 
 .ExpediaAppPhoneNubSelecter{
@@ -102,9 +103,129 @@
 
 .ExpediaAppTextLinkSender > button {
     border: 1px solid #727483;
-    padding: 10px 2rem;
-    background-color: #0f4a8a;
+    padding: 10px 0.2rem;
+    background-color:#3662d8;
     border-radius: 10px;
+    width: 160px;
    color: #fff;
-   font-weight: 400;
+   font-weight: 600;
 }
+
+.lastExpediaDiv{
+    color: #343b53;
+    font-size: 0.7rem;
+    padding: 0.75rem 0;
+}
+
+
+@media all  and (max-width:1185px){
+   
+    .ExpediaApp{
+        padding-inline: 1.5rem;
+    }
+
+    .ExpediaAppImg{
+        width: 40%;
+    }
+
+
+    .ExpediaAppTextDownloadText{
+        display: none;
+    }
+
+    .ExpediaAppTextLinkSender{
+        display: none;
+    }
+
+    .ExpediaAppQrCode{
+        display: none;
+    }
+
+
+    .lastExpediaDiv{
+        display: none;
+    }
+
+
+    .ExpediaAppText{
+        width: 60%;
+    }
+}
+
+
+@media all and (max-width:885px){
+    .ExpediaAppTextHead > h2{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #141d38;
+    }
+
+    .ExpediaAppText{
+        padding: 1rem 0 1rem 0px;
+    }
+
+    .ExpediaAppText > p {
+        font-size: 0.874rem;
+    }
+    
+}
+
+
+@media all and (max-width:766px){
+    .ExpediaAppTextHead > h2{
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #141d38;
+    }
+
+    .ExpediaAppText{
+        padding: 1rem 0 1rem 0px;
+    }
+
+    .ExpediaAppText > p {
+        font-size: 0.674rem;
+    }
+
+    .ExpediaAppImg > image  , .ExpediaAppQrCode > image{
+        width: 100%;
+        object-fit:contain;
+        box-sizing: inherit;
+    }
+    
+    
+}
+
+@media all and (max-width:650px){
+
+ .ExpediaApp{
+    padding-inline: 1rem;
+ }
+
+
+.ExpediaAppWrapper{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.ExpediaAppImg{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.ExpediaAppText{
+    width: 100%;
+}
+
+
+.ExpediaAppTextHead>h2{
+    font-size: 1.24rem;
+}
+
+
+.ExpediaAppTextHead > p{
+    line-height: calc(18 / 14);
+    font-weight: 400;
+}
+}  

@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.important{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.importantTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #262626;
+}
+
+.ruleul{
+    padding: 20px 10px;
+    color: #616161;
+    font-size: small;
+    height: 210px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.ruleulchild{
+    padding: 0px 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.impblue{
+    text-decoration: underline;
+    color: #004e93;
+}
+
+.imps{
+    font-size: small;
+    color: #616161;
+    margin-top: 20px;
+}
+
+
+
+.impchanrule{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    color: #2f7000 ;
+    gap: 6px;
+    margin-top: 20px;
+}
+
+.impbtn{
+  
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #89bf01;
+    border-color: #435C06 #263503 #263503;
+    margin-top: 20px;
+}
+
+.impbtn:hover{
+    border-color: #435C06 #263503 #263503;
+    background: #709C02;
+    background: linear-gradient(to top,#709C02 0,#90C900 100%);
+    color: #1f1f1f;
+}
+
+.btnflrc{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fagreater{
+    font-size: 0.8rem;
+}
+
+.impbefore{
+    text-decoration: underline;
+    color: #004e93;
+}
+
+
