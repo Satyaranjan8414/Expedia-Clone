@@ -47,7 +47,7 @@ const Login = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const Login = () => {
       toast({
         title: `LogIn Successfull`,
         status: "success",
-        duration: 2000,
+        duration: 1500,
         position: "top",
         isClosable: true,
       });
@@ -105,7 +105,7 @@ const Login = () => {
         toast({
           title: `Wrong Password !!!`,
           status: "error",
-          duration: 2000,
+          duration: 1500,
           position: "top",
           isClosable: true,
         });
@@ -114,7 +114,7 @@ const Login = () => {
       toast({
         title: `User not registered !!!`,
         status: "error",
-        duration: 2000,
+        duration: 1500,
         position: "top",
         isClosable: true,
       });

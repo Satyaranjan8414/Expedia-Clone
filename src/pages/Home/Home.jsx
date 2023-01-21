@@ -2,7 +2,7 @@ import React from "react";
 import home from "./Home.module.css";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
-
+import Footer from "../../components/Footer/Footer";
 import BookearlyImage from "../Bookearly/BookearlyImage"
 
 
@@ -25,6 +25,7 @@ const Home = () => {
       </div>
 
       <div style={{ padding: "500px" }}></div>
+      <Footer />
     </div>
   );
 };
