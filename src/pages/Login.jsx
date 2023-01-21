@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { AiFillApple } from "react-icons/ai"; 
+import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Loginfunction } from "../Redux/AuthContext/action";
 import { InfinitySpin } from "react-loader-spinner";
+import Loading from "../components/TravelliaLoader/Loading";
 
 import {
   Box,
@@ -42,12 +43,12 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
-   const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
+  const [isLargerThan992] = useMediaQuery("(min-width: 992px)");
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   useEffect(() => {
@@ -55,7 +56,7 @@ const Login = () => {
       toast({
         title: `LogIn Successfull`,
         status: "success",
-        duration: 2000,
+        duration: 1500,
         position: "top",
         isClosable: true,
       });
@@ -70,7 +71,7 @@ const Login = () => {
       .get("https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan")
       .then((response) => {
         setUserObj(response.data.items);
-        console.log("login res",response.data.items)
+        console.log("login res", response.data.items);
       })
       .catch((e) => {
         console.log(e);
@@ -81,12 +82,10 @@ const Login = () => {
     let check;
 
     let checkEmail = userObj.filter((el) => {
-      if(el.email===email)
-      {
-        console.log("email",email)
+      if (el.email === email) {
+        console.log("email", email);
       }
       return el.email === email;
-      
     });
 
     if (checkEmail.length > 0) {
@@ -105,7 +104,7 @@ const Login = () => {
         toast({
           title: `Wrong Password !!!`,
           status: "error",
-          duration: 2000,
+          duration: 1500,
           position: "top",
           isClosable: true,
         });
@@ -114,7 +113,7 @@ const Login = () => {
       toast({
         title: `User not registered !!!`,
         status: "error",
-        duration: 2000,
+        duration: 1500,
         position: "top",
         isClosable: true,
       });
@@ -126,16 +125,7 @@ const Login = () => {
   return (
     <>
       {isLoading ? (
-        <Flex justify="center" mt={"5"}>
-          <Spinner
-            thickness="5px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="#3182ce"
-            size="lg"
-          />
-          {/* <InfinitySpin width="200" color="#4fa94d" /> */}
-        </Flex>
+        <Loading />
       ) : (
         <Flex
           justify="center"

@@ -22,6 +22,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Navbar } from "../components/Navbar/Navbar";
+import Loading from "../components/TravelliaLoader/Loading";
 
 export default function CreateAccount() {
   const [isLoading, setIsLoading] = useState(true);
@@ -97,15 +98,7 @@ export default function CreateAccount() {
   return (
     <>
       {isLoading ? (
-        <Flex justify="center" mt={"5"}>
-          <Spinner
-            thickness="5px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="#3182ce"
-            size="lg"
-          />
-        </Flex>
+        <Loading />
       ) : (
         <Flex
           justify="center"

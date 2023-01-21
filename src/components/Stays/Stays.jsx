@@ -5,9 +5,33 @@ import { shallowEqual, useSelector } from "react-redux";
 import { HeaderTravellers } from "../HeaderTravellers/HeaderTravellers";
 import { memo, useState } from "react";
 import { useRef } from "react";
+import { Calendar, DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css fil
+import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 const Stays = memo(() => {
-  const triggerTravel = useRef(false);
+  const [text, settext] = useState("");
+
+  const [openStartDate, setStartDate] = useState(false);
+  const [endDate, setEndDate] = useState(false);
+
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+
+  const [endTrip, setendTrip] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
 
   const { Room, Child, Adult } = useSelector((value) => {
     return {
@@ -22,6 +46,18 @@ const Stays = memo(() => {
   const traTrigger = (e) => {
     e.preventDefault();
     setTravellers((prev) => !prev);
+  };
+
+  const triggerStartDate = () => {
+    setStartDate((prev) => !prev);
+  };
+
+  const triggerendDate = () => {
+    setEndDate((prev) => !prev);
+  };
+
+  const triggerText = (e) => {
+    settext(e.target.value);
   };
 
   return (
@@ -39,6 +75,7 @@ const Stays = memo(() => {
                   type="text"
                   className={stay.staysinput}
                   placeholder="Going to"
+                  onChange={triggerText}
                 />
               </div>
             </div>
@@ -47,23 +84,44 @@ const Stays = memo(() => {
                 <div className={stay.staysLogo}>
                   <BiCalendarEvent />
                 </div>
-                <div className={stay.staysBtn}>
+                <div className={stay.staysBtn} onClick={triggerStartDate}>
                   <h6>Check-in</h6>
                   <div>
-                    <h1>hello</h1>
+                    <h1>{`${format(state[0].startDate, "dd LLL")}`}</h1>
                   </div>
                 </div>
+
+                {openStartDate && (
+                  <div className={stay.staysCalender}>
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={(item) => setState([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={state}
+                    />
+                  </div>
+                )}
               </div>
               <div className={stay.staysdivinput}>
                 <div className={stay.staysLogo}>
                   <BiCalendarEvent />
                 </div>
-                <div className={stay.staysBtn}>
+                <div className={stay.staysBtn} onClick={triggerendDate}>
                   <h6>Check-out</h6>
                   <div>
-                    <h1>cal</h1>
+                    <h1>{`${format(endTrip[0].startDate, "dd LLL")}`}</h1>
                   </div>
                 </div>
+                {endDate && (
+                  <div className={stay.staysCalender1}>
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={(item) => setendTrip([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={endTrip}
+                    />
+                  </div>
+                )}
               </div>
             </div>
             <div className={stay.staysdivinput}>
@@ -94,7 +152,9 @@ const Stays = memo(() => {
           </div>
 
           <div className={stay.staysFormSearch}>
-            <button>Search</button>
+            <Link to="/hotels">
+              <button>Search</button>
+            </Link>
           </div>
         </div>
       </div>
