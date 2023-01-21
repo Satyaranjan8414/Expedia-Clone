@@ -1,7 +1,6 @@
 // Chakra Imports
 import { Button, useColorModeValue } from "@chakra-ui/react";
-// Custom Icons
-import { SettingsIcon } from "components/Icons/Icons";
+
 import {AiFillSetting} from "react-icons/ai"
 import PropTypes from "prop-types";
 import React from "react";
