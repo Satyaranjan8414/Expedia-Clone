@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 import { Center, Flex, Stack, useColorModeValue } from "@chakra-ui/react";
@@ -79,3 +80,4 @@ export default function Card({ hotel }) {
     
   );
 }
+

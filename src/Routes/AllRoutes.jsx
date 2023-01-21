@@ -7,11 +7,6 @@ import Login from "../pages/Login";
 import CreateAccount from "../pages/SignUP";
 import Footer from "../components/Footer/Footer";
 
-import Card from "../components/card/Card";
-import Hotels from "../pages/Hotels/Hotels";
-import SingleHotel from "../components/SingleHotel/SingleHotel";
-import { Cartdata } from "../components/card/Cartdata";
-
 const AllRoutes = () => {
   return (
     <div>
@@ -22,15 +17,10 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer/>}/>
-       
+        
         
         <Route path="*" element={<Pagenot />} />
         <Route path="/bookearly" element={<Bookearly/>} /> 
-
-        <Route path="/SingleHotel" element={<SingleHotel/>} /> 
-        <Route path="/carddata" element={<Cartdata/> } /> 
-        <Route path="/card" element={<Card/> } />
-        <Route path="/hotels" element={<Hotels/>} />
       </Routes>
     </div>
   );
