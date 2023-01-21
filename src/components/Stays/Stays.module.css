@@ -26,6 +26,7 @@
 
 
 .staysBtn2 > div {
+position: relative;
   width: 50%;
   display: flex;
   align-items: center;
@@ -33,6 +34,9 @@
   padding: 5px 0;
   cursor: pointer;
 }
+
+
+
 
 .staysLogo{
   display: flex;
@@ -44,6 +48,7 @@
   /* border: 1px solid rebeccapurple; */
 
 }
+
 
 
 .staysLogo1{
@@ -75,7 +80,6 @@
 
 .staysdivinput{
   padding: 5px 0;
-  position: relative;
 }
 
 
@@ -141,7 +145,7 @@
   padding-left: 1.5rem;
 }
 
-.staysFormSearch > button {
+.staysFormSearch > a > button {
   width: 160px;
   height: 50px;
   padding: 10px 0px;
@@ -154,10 +158,34 @@
   font-weight: 600;
 }
 
+
+.staysCalender{
+  position: absolute;
+  top:55px;
+  z-index: 2;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #fff;
+}
+
+
+.staysCalender1{
+  position: absolute;
+  top:51px;
+  z-index: 2;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 @media all and (max-width:978px){
  .staysFormsWrapper{
    grid-template-columns: repeat(1 , 1fr );
  }
+
+
+ .staysCalender1{
+  right: 15px;
+}
 
  .staysBtn2 > button{
   padding: 2px 0px;
@@ -172,6 +200,26 @@
 @media all and (max-width:575px){
   .staysFormSearch > button {
     width: 100%;
+  }
+
+  
+
+  .staysCalender{
+    position: absolute;
+    top:55px;
+    z-index: 2;
+    left: -20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+  
+  .staysCalender1{
+    position: absolute;
+    top:51px;
+    z-index: 2;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: #fff;
   }
 
 
@@ -205,3 +253,15 @@
 }
 
 
+
+@media all and (max-width:575px){
+   .staysCalender1{
+    left: -180px;
+   }
+}
+
+@media all and (max-width:400px){
+  .staysCalender1{
+   left: -170px;
+  }
+}

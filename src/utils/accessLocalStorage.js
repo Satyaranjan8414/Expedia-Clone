@@ -1,9 +1,8 @@
 import { json } from "react-router-dom";
 
-const getLocalData = (key) => {
+export const getLocalData = (key) => {
     try {
-        let temp = localStorage.getItem(key);
-        temp = JSON.stringify(localStorage.getItem(key));
+        let temp = JSON.parse(localStorage.getItem(key))
         return temp
     } catch (e) {
         return undefined
@@ -11,6 +10,10 @@ const getLocalData = (key) => {
 }
 
 
-const setLocalDate = (key, data) => {
-    localStorage.setItem(key, JSON.stringify(data))
+export const setLocalDate = (key, data) => {
+    return localStorage.setItem(key, JSON.stringify(data))
 }
+
+
+
+localStorage.setItem("usermame ", JSON.stringify(1))

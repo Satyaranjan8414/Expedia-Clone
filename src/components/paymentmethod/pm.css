@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.paymentmethod{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.paymentmethod-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #262626;
+}
+
+.paymentmethod-tt{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+    color: #2f7000;
+}
+
+.paymenttras{
+    display: flex;
+    align-items: center;
+    gap: 0px 4px;
+    font-weight: 400;
+    font-size: small;
+}
+
+.paymentmethodcheck{
+    margin-top: 10px;
+    display: flex;
+    font-size: 0.8rem;
+    gap: 0px 4px;
+}
+
+.paymentmethodcheck > div{
+ padding: 5px 5px;
+ cursor: pointer;
+}
+
+.paymentmethodcheck > div:first-child{
+    background-color: #f5f5f5;
+}
+
+.paymentmethodcheck > div:hover{
+    background-color: #d8f9ff;
+}
+
+.payment-line{
+    width: 100%;
+    background-color: #c7c7c7;
+    height: 1px;
+    margin-top: 8px;
+}
+
+.paymentmethod-imgcard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+     margin-top: 10px;
+}
+
+
+.paymentmethod-imgcard > div{
+   height: 100%;
+   width: 5%;
+   border: 1px solid #e5e5e5;
+}
+
+
+
+.paymentmethod-imgcard > div > img{
+    width: 100%;
+    object-fit: cover;
+} 
+
+.paymentmethod-form{
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #616161;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+
+
+.form-star{
+    color: red;
+}
+
+.paymentmethod-form > input{
+    width: 100%;
+    max-width: 63%;
+    margin-top: 3px;
+    height: 35px;
+    /* border-radius: 3px;
+    border: 1px solid #616161; */
+    margin-bottom: 20px;
+    box-shadow: inset 0 1px 0 rgb(0 0 0 / 10%), inset 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 0.47058824rem 0.70588235rem;
+    border-color: #858585 #c2c2c2 #c2c2c2;
+    background: #fff;
+    font-size: .88235294rem;
+    line-height: 1.2;
+    cursor: text;
+    color: #1f1f1f;
+}
+
+.paymentmethod-form > input:nth-child(4){
+    max-width: 45%;
+    height: 40px;
+    box-shadow: inset 0 1px 0 rgb(0 0 0 / 10%), inset 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 0.47058824rem 0.70588235rem;
+    border-color: #858585 #c2c2c2 #c2c2c2;
+    background: #fff;
+    font-size: .88235294rem;
+    line-height: 1.2;
+    cursor: text;
+    color: #1f1f1f;
+}
+
+.paymentmethod-form > input:focus{
+    outline: 2px solid #0f4a8a;
+}
+
+.form-select{
+    display: flex;
+    gap: 30px;
+    margin: 5px 0 15px 0;
+}
+
+.form-select > select{
+    width: 90px;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    border: 1px solid #616161;
+}
+
+.formsk{
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.seckey{
+    width:  80px;
+    height: 40px;
+    /* border-radius: 5px;
+    border: 1px solid #616161; */
+    /* width: 100%; */
+    box-shadow: inset 0 1px 0 rgb(0 0 0 / 10%), inset 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 0.47058824rem 0.70588235rem;
+    border-color: #858585 #c2c2c2 #c2c2c2;
+    background: #fff;
+    font-size: .88235294rem;
+    line-height: 1.2;
+    cursor: text;
+    color: #1f1f1f;
+    margin-top: 3px;
+}
+
+.formbz{
+    width: 110px;
+    height: 40px;
+    /* border-radius: 5px;
+    border: 1px solid #616161; */
+    box-shadow: inset 0 1px 0 rgb(0 0 0 / 10%), inset 0 1px 1px rgb(0 0 0 / 5%);
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 0.47058824rem 0.70588235rem;
+    border-color: #858585 #c2c2c2 #c2c2c2;
+    background: #fff;
+    font-size: .88235294rem;
+    line-height: 1.2;
+    cursor: text;
+    color: #1f1f1f;
+    margin-top: 3px;
+}
+
+.formcheckboc{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sc:focus{
+    outline: 2px solid #0f4a8a;
+}
+
+
+
+
+

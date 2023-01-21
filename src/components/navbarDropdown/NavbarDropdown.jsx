@@ -30,6 +30,9 @@ export const NavbarDropdown = () => {
             <button className="navDropdownCreateAccBtn">Create a Free account</button>
           </Link>
             {/* <span>Create a Free account</span> */}
+            <span>
+              <Link to="signup">Create a Free account</Link>
+            </span>
           </div>
         </div>
 

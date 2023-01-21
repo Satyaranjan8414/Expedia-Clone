@@ -14,6 +14,7 @@ import { Cartdata } from "../components/card/Cartdata";
 import TopImages from "../components/SingleHotel/TopImages";  // for singleHotel page test
 import Location from "../components/SingleHotel/Location";    // for singleHotel Page test
 import Reviews from "../components/SingleHotel/Reviews";     // for SingleHotel Page  test
+import Payemnt from "../components/Payment/Payment";
 
 const AllRoutes = () => {
   return (
@@ -32,6 +33,9 @@ const AllRoutes = () => {
         <Route path="/card" element={<Card/> } />
         <Route path="/hotels" element={<Hotels/>} />
         <Route path="*" element={<Pagenot />} />
+        <Route path="/hotels" element={<Hotels />} />
+        <Route path="/payment" element={<Payemnt />} />
+        
       </Routes>
     </div>
   );

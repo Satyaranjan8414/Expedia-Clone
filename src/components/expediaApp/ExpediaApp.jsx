@@ -38,7 +38,7 @@ export const ExpediaApp = () => {
               <button>Get the App</button>
             </div>
           </div>
-          <div>
+          <div className={Eap.lastExpediaDiv}>
             <span>
               By providing your number, you agree to receive a one-time
               automated text message with a link to get the app. Standard text
