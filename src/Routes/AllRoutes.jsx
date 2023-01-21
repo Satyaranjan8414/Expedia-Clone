@@ -6,6 +6,7 @@ import Pagenot from "../pages/Pagenot";
 import Login from "../pages/Login";
 import CreateAccount from "../pages/SignUP";
 import Footer from "../components/Footer/Footer";
+import Admin from "../pages/Admin/Admin";
 
 const AllRoutes = () => {
   return (
@@ -17,10 +18,11 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer/>}/>
-       
+        
         
         <Route path="*" element={<Pagenot />} />
         <Route path="/bookearly" element={<Bookearly/>} /> 
+        <Route path= "/admin" element={<Admin/>}></Route>
       </Routes>
     </div>
   );

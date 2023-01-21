@@ -35,6 +35,14 @@ import {
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 
+const LinkItems = [
+  { name: 'Home', icon: FiHome },
+  { name: 'Trending', icon: FiTrendingUp },
+  { name: 'Explore', icon: FiCompass },
+  { name: 'Favourites', icon: FiStar },
+  { name: 'Settings', icon: FiSettings },
+];
+
 
 export default function Admin({
     children,
