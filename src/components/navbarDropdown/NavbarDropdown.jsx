@@ -26,7 +26,9 @@ export const NavbarDropdown = () => {
             <button className="navDropdownSignBtn">Sign in</button>
           </Link>
           <div className="navDLogIn">
-            <span>Create a Free account</span>
+            <span>
+              <Link to="signup">Create a Free account</Link>
+            </span>
           </div>
         </div>
 

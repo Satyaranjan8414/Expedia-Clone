@@ -2,9 +2,9 @@ import React from "react";
 import home from "./Home.module.css";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { Header } from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
-import BookearlyImage from "../Bookearly/BookearlyImage"
-
+import BookearlyImage from "../Bookearly/BookearlyImage";
 
 import { Reward } from "../../components/Reward/Reward";
 import { ExpediaApp } from "../../components/expediaApp/ExpediaApp";
@@ -16,15 +16,20 @@ const Home = () => {
       <div className={home.homeWrapper}>
         <Header />
       </div>
-      <BookearlyImage/>
       <div>
         <Reward />
       </div>
+      <div style={{ padding: "10px" }}></div>
       <div>
         <ExpediaApp />
       </div>
-
-      <div style={{ padding: "500px" }}></div>
+      <div style={{ padding: "30px" }}></div>
+      <div>
+        <BookearlyImage />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

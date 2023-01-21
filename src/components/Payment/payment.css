@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.paymentcontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ededed;
+    gap: 10px;
+}
+
+.payentwrapper{
+    width: 100%;
+    max-width: 1247px;
+    display: flex;
+    flex-direction: column;
+}
+
+.securepayment{
+    color: #004074;
+    font-weight: 600;
+    padding: 10px 0px;
+    font-size: 1.7rem;
+}
+
+.free-cancellation-message{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    gap: 0px 5px;
+}
+
+.free-cancellation-image{
+   padding: 10px;
+   height: 100%;
+ 
+}
+
+.free-cancellation-text{
+   padding: 10px;
+}
+
+.free-cancellation-text > p {
+    font-weight: 600;
+    color: #262626;
+}
+
+.free-cancellation-text > span{
+    color: #616161;
+    font-size: 0.9;
+}
+
+.maindiv{
+    display: flex;
+    gap: 10px;
+}
+
+.div1{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.div2{
+    flex: 1;
+}
+
+.payfooter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.paymentmaillist{
+    padding: 20px;
+    background-color: #ededed;
+}

@@ -6,16 +6,27 @@ import { HiUserCircle } from "react-icons/hi";
 import "./Navb.css";
 import { NavbarDropdown } from "../navbarDropdown/NavbarDropdown";
 import { MoreOption } from "../moreOption/MoreOption";
+import { useSelector } from "react-redux";
+import { AuthDropdown } from "../AuthDropdown/AuthDropdown";
 
 export const Navb = () => {
   const [Navtrigger, setNavTrigger] = useState(false);
+  const [Authtrigger, setauthTrigger] = useState(false);
   const [moreOptionCLick, setMoreOptionClick] = useState(false);
+  let auth = useSelector((state) => state.AuthReducer.isAuth);
 
   function NavbarTrigger() {
     {
       moreOptionCLick && setMoreOptionClick(false);
     }
     setNavTrigger((prev) => !prev);
+  }
+
+  function setAuthTrigger() {
+    {
+      moreOptionCLick && setMoreOptionClick(false);
+    }
+    setauthTrigger((prev) => !prev);
   }
 
   function triggerMoreOption() {
@@ -45,11 +56,13 @@ export const Navb = () => {
         </button>
       </div>
       <div className="navUserCircleIcon">
-        <button onClick={NavbarTrigger}>
+        <button onClick={auth ? setAuthTrigger : NavbarTrigger}>
           <HiUserCircle />
         </button>
 
-        {Navtrigger && <NavbarDropdown />}
+        {auth
+          ? Authtrigger && <AuthDropdown />
+          : Navtrigger && <NavbarDropdown />}
       </div>
     </div>
   );

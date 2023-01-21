@@ -1,6 +1,6 @@
 import navbar from "./Navbar.module.css";
 import { HiUserCircle } from "react-icons/hi";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavbarDropdown } from "../navbarDropdown/NavbarDropdown";
 import { AuthDropdown } from "../AuthDropdown/AuthDropdown";
 import { Navb } from "../Navb/Navb";
@@ -78,7 +78,7 @@ export const Navbar = ({ type }) => {
               <span onClick={() => settrigger((prev) => !prev)}>
                 <HiUserCircle />
               </span>
-              {trigger && <AuthDropdown />}
+              {trigger && <AuthDropdown setAuth={setAuth} />}
             </div>
           ) : (
             <div className={navbar.navDropdown}>
