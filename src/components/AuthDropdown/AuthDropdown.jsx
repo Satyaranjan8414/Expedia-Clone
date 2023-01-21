@@ -1,4 +1,40 @@
 import "./AuthDropdown.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
+import { SIGNOUT } from "../../Redux/AuthContext/actionTypes";
+import React from "react";
+import { useToast, Button
+} from "@chakra-ui/react";
+
+export const AuthDropdown = () => {
+  const Navigate = useNavigate();
+  const hoverColor = "#3182ce";
+  const dispatch = useDispatch();
+  const toast = useToast();
+
+  //userData 
+  const { userData, isAuth } = useSelector((state) => {
+    return {
+      userData: state.AuthReducer.userData,
+      isAuth: state.AuthReducer.isAuth,
+    };
+  }, shallowEqual);
+
+//signOut section
+  const handleSignout = (e) => {
+    setTimeout(() => {
+      Navigate("/signup");
+    }, 2000);
+
+    dispatch({ type: SIGNOUT });
+    toast({
+      title: "Signout Successfull !!!",
+      status: "success",
+      duration: 1000,
+      isClosable: true,
+      position: "top",
+    });
+  };
 
 import { useState } from "react";
 import { getLocalData } from "../../utils/accessLocalStorage";
@@ -20,6 +56,8 @@ export const AuthDropdown = ({ setAuth }) => {
     <div className="authDropdown">
       <div className="authDropdownWrapper" style={{ width: "100%" }}>
         <div className="authDropdownUserDetail" style={{ width: "100%" }}>
+          <h2>Hi , {userData.userName}</h2>
+          <h3>{userData.email}</h3>
           <h2>Hi , {data.userName}</h2>
           <h3>{data.email}</h3>
           <div className="authDropdownBlueMember">
@@ -59,6 +97,15 @@ export const AuthDropdown = ({ setAuth }) => {
 
         <hr className="haderSperation" />
 
+        <div className="authdropdownSignout"><Button
+              w="100%"
+              colorScheme="blue"
+              onClick={(e) => {
+                handleSignout(e);
+              }}
+            >
+              Sign out
+            </Button></div>
         <div className="authdropdownSignout" onClick={callSignout}>
           SignOut
         </div>
