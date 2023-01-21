@@ -64,7 +64,7 @@ export const Cartdata = () => {
                     </div>
                     <div>
                       <p>{ele.price1}</p>
-                      {/* <p>{ele.price2}</p> */}
+                      <p>{ele.price2}</p>
                     </div>
                   </div>
                   
