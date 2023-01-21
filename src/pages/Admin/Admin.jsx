@@ -13,7 +13,6 @@ import {
   Drawer,
   DrawerContent,
   Text,
-  useDisclosure,
   BoxProps,
   FlexProps,
   Menu,
@@ -21,6 +20,10 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  useDisclosure,
+  Stack,
+  useColorMode,
+  Button
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -34,19 +37,24 @@ import {
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import FixedPlugin from '../../components/FixedPlugin/FixedPlugin';
+
 
 const LinkItems = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
+  { name: 'Dashboard', icon: FiHome },
+  { name: 'Tables', icon: FiTrendingUp },
+  { name: 'Billing', icon: FiCompass },
   { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Profile', icon: FiSettings },
+  { name: 'Setting', icon: FiSettings },
 ];
 
 
 export default function Admin({
     children,
   }) {
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -98,12 +106,14 @@ const SidebarContent = ({ onClose, ...rest }) => {
           {link.name}
         </NavItem>
       ))}
+      <FixedPlugin/>
     </Box>
   );
 };
 
 
 const NavItem = ({ icon, children, ...rest }) => {
+  
   return (
     <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
@@ -135,6 +145,7 @@ const NavItem = ({ icon, children, ...rest }) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }) => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -146,6 +157,9 @@ const MobileNav = ({ onOpen, ...rest }) => {
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
       {...rest}>
+        <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+        </Button>
       <IconButton
         display={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
