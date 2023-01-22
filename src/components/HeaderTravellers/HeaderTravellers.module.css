@@ -47,6 +47,13 @@
     font-weight: 600;
 }
 
+.travelCounterNumber{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .headerTravellrsBtnDone{
     margin-top: 45px;

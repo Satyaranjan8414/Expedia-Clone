@@ -10,6 +10,8 @@ import {
   
   } from '@chakra-ui/react';
 
+  import { ChevronRightIcon,ChevronLeftIcon } from '@chakra-ui/icons';
+
 // Settings for the slider
 const settings = {
   dots: true,
@@ -74,7 +76,7 @@ export default function CardCarousel({prop}) {
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickPrev()}>
-        <BiLeftArrowAlt />
+        <ChevronLeftIcon />
       </IconButton>
       {/* Right Icon */}
       <IconButton
@@ -88,12 +90,12 @@ export default function CardCarousel({prop}) {
         transform={'translate(0%, -50%)'}
         zIndex={2}
         onClick={() => slider?.slickNext()}>
-        <BiRightArrowAlt />
+        <ChevronRightIcon />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((url, index) => (
-            <Image 
+            <Image key={index}
             objectFit="cover"
             boxSize="100%"
             src={

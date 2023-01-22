@@ -23,7 +23,7 @@ const Home = () => {
       <div>
         <ExpediaApp />
       </div>
-      <div style={{ padding: "30px" }}></div>
+      <div style={{ padding: "1.5rem" }}></div>
       <div>
         <BookearlyImage />
       </div>

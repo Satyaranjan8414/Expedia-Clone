@@ -1,0 +1,29 @@
+.carousel_main {
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+  }
+  .carousel_next_btn {
+    position: absolute;
+    right: 2%;
+    top: 45%;
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    color: #000;
+  }
+  .carousel_prev_btn {
+    position: absolute;
+    left: 2%;
+    top: 45%;
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    color: rgb(0, 0, 0);
+  }

@@ -9,10 +9,18 @@ import { Calendar, DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css fil
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { setLocalDate } from "../../utils/accessLocalStorage";
 
 const Stays = memo(() => {
   const [text, settext] = useState("");
+
+  let navigate = useNavigate();
+
+  function redirect() {
+    navigate("/hotels", { state: { text } });
+    setLocalDate("searchvalue", text);
+  }
 
   const [openStartDate, setStartDate] = useState(false);
   const [endDate, setEndDate] = useState(false);
@@ -152,9 +160,7 @@ const Stays = memo(() => {
           </div>
 
           <div className={stay.staysFormSearch}>
-            <Link to="/hotels">
-              <button>Search</button>
-            </Link>
+            <button onClick={redirect}>Search</button>
           </div>
         </div>
       </div>

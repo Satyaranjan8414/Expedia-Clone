@@ -16,11 +16,15 @@ import Card from "../components/card/Card";
 import Hotels from "../pages/Hotels/Hotels";
 import SingleHotel from "../components/SingleHotel/SingleHotel";
 import { Cartdata } from "../components/card/Cartdata";
-import TopImages from "../components/SingleHotel/TopImages";  // for singleHotel page test
-import Location from "../components/SingleHotel/Location";    // for singleHotel Page test
-import Reviews from "../components/SingleHotel/Reviews";     // for SingleHotel Page  test
+import TopImages from "../components/SingleHotel/TopImages"; // for singleHotel page test
+import Location from "../components/SingleHotel/Location"; // for singleHotel Page test
+import Reviews from "../components/SingleHotel/Reviews"; // for SingleHotel Page  test
 import Payemnt from "../components/Payment/Payment";
+
 import TableData from "../pages/Admin/TableData";
+
+
+import HotelData from "../pages/HotelsSinglePage/HotelData";
 
 
 const AllRoutes = () => {
@@ -28,11 +32,12 @@ const AllRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="createHotal" element={<CreateHotel/>} />
-        
+        <Route path="createHotal" element={<CreateHotel />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
-        <Route path="/footer" element={<Footer/>}/>
+        <Route path="/footer" element={<Footer />} />
+
 
         <Route path="/signinadmin" element={<SignIn/>}></Route>
         <Route path="/dashboard" element={<Admin/>}></Route>
@@ -44,6 +49,8 @@ const AllRoutes = () => {
         <Route path="*" element={<Pagenot />} />
         <Route path="/payment" element={<Payemnt />} />
         <Route path="/hoteldata" element={<TableData/>}></Route>
+        <Route path="/singlepage/:id" from element={<HotelData />} />
+
       </Routes>
     </div>
   );
