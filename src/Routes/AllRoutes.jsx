@@ -21,6 +21,7 @@ import Location from "../components/SingleHotel/Location"; // for singleHotel Pa
 import Reviews from "../components/SingleHotel/Reviews"; // for SingleHotel Page  test
 import Payemnt from "../components/Payment/Payment";
 import HotelData from "../pages/HotelsSinglePage/HotelData";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
@@ -39,10 +40,25 @@ const AllRoutes = () => {
         <Route path="/SingleHotel" element={<SingleHotel />} />
         <Route path="/carddata" element={<Cartdata />} />
         <Route path="/card" element={<Card />} />
-        <Route path="/hotels" element={<Hotels />} />
+        <Route
+          path="/hotels"
+          element={
+            <PrivateRoute>
+              <Hotels />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<Pagenot />} />
         <Route path="/payment" element={<Payemnt />} />
-        <Route path="/singlepage/:id" from element={<HotelData />} />
+        <Route
+          path="/singlepage/:id"
+          from
+          element={
+            <PrivateRoute>
+              <HotelData />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </div>
   );
