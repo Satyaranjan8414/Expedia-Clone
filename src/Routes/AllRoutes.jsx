@@ -25,6 +25,7 @@ import TableData from "../pages/Admin/TableData";
 
 
 import HotelData from "../pages/HotelsSinglePage/HotelData";
+import PrivateRoute from "./PrivateRoute";
 
 
 const AllRoutes = () => {
@@ -38,6 +39,31 @@ const AllRoutes = () => {
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer />} />
 
+        <Route path="/signinadmin" element={<SignIn />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/bookearly" element={<Bookearly />} />
+        <Route path="/SingleHotel" element={<SingleHotel />} />
+        <Route path="/carddata" element={<Cartdata />} />
+        <Route path="/card" element={<Card />} />
+        <Route
+          path="/hotels"
+          element={
+            <PrivateRoute>
+              <Hotels />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<Pagenot />} />
+        <Route path="/payment" element={<Payemnt />} />
+        <Route
+          path="/singlepage/:id"
+          from
+          element={
+            <PrivateRoute>
+              <HotelData />
+            </PrivateRoute>
+          }
+        />
 
         <Route path="/signinadmin" element={<SignIn/>}></Route>
         <Route path="/dashboard" element={<Admin/>}></Route>
