@@ -9,7 +9,7 @@ const SearchByName = () => {
           <h1 className={Style.SearchHeading}>Search by property name</h1>
           <div className={Style.SearchBox}>
             <SearchIcon/>
-            <input type='text' placeholder='e.g. Pune' className={Style.SearchInput}></input>
+            <input type='text' placeholder='  e.g. Pride Hotel' className={Style.SearchInput}></input>
           </div>
     </div>
   </div>

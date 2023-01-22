@@ -6,7 +6,9 @@ import CardCarousel from "./CardCarousel";
 import Style from "./Card.module.css";
 
 export default function Card({ hotel }) {
-  const handleCardClick = () => {};
+  const handleCardClick = () => {
+    
+  };
   const price2 = hotel.price2.split("");
   price2.splice(price2.length - 3,0,",")
 
@@ -41,7 +43,7 @@ export default function Card({ hotel }) {
           borderRadius="10px"
           height={"180px"}
         >
-          <CardCarousel prop={hotel} />
+          <CardCarousel key={hotel.id} prop={hotel} />
         </Stack>
 
         <Stack lineHeight={"normal"}>

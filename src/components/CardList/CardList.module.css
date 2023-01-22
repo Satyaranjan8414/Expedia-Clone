@@ -1,0 +1,17 @@
+.SortBySelectContainer{
+    border: 1px solid grey;
+   padding: 7% 5%;
+   text-align: left;
+   border-radius: 10px;
+   font-size: 14px;
+}
+.SortByContainer{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0% 3%;
+}
+.noOfProperty{
+    font-size: 14px;
+}
+
