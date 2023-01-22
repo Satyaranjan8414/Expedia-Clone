@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import CreateAccount from "../pages/SignUP";
 import CreateHotel from "../pages/CreateHotal/CreateHotal";
 import Footer from "../components/Footer/Footer";
+import ConfirmBooking from "../pages/ConfirmBooking";
 
 import SignIn from "../pages/Admin/Auth/SignIn";
 import Admin from "../pages/Admin/Admin";
@@ -38,6 +39,7 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<CreateAccount />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/confirmBooking" element={<ConfirmBooking />} />
 
         <Route path="/signinadmin" element={<SignIn />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
