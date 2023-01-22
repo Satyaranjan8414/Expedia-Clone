@@ -35,7 +35,7 @@ export default function Card({ hotel }) {
         border="1px solid lightgrey"
         borderRadius={"10px"}
         cursor="pointer"
-        onClick={handleCardClick}
+       
         direction={"row"}
       >
         <Stack
@@ -48,15 +48,15 @@ export default function Card({ hotel }) {
           <CardCarousel key={hotel.id} prop={hotel} />
         </Stack>
 
-        <Stack lineHeight={"normal"}>
+        <Stack lineHeight={"normal"}  onClick={handleCardClick}>
           <h1 className={Style.heading1}>{hotel.heading1}</h1>
           <h1 className={Style.heading2}>{hotel.heading2}</h1>
          <div>
          <h1 className={Style.text1}> {hotel.text1.length>0? hotel.text1:`The price was Rs${+(hotel.price2)+2000}` } </h1>
           <h1 className={Style.text2}>
-            {hotel.text2.length > 14
+            {hotel.text2.length < 10 || hotel.text==="In AC Hotel Genova we know what need: AC Lounge and delicious breakfast, comfy rooms, common areas and the best rates."
               ? hotel.text2
-              : "Limited Time Offer - Start your day sunny side up with Complimentary Breakfast, Wi-Fi, Gym & Pool access."}
+              : `${hotel.text2}. Limited Time Offer - Start your day sunny side up with Complimentary Breakfast, Wi-Fi, Gym & Pool access.`}
           </h1>
          </div>
          <div className={Style.text3}>
