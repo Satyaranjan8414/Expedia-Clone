@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { Center, Flex, Stack, useColorModeValue } from "@chakra-ui/react";
 import CardCarousel from "./CardCarousel";
 import Style from "./Card.module.css";
+import { useNavigate } from "react-router";
 
 export default function Card({ hotel }) {
+  const navigate=useNavigate();
   const handleCardClick = () => {
-    
+    navigate(`/singlepage/${hotel.id}`)
   };
   const price2 = hotel.price2.split("");
   price2.splice(price2.length - 3,0,",")

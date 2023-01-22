@@ -4,6 +4,7 @@ import { getHotels } from '../../Redux/Hotels/action';
 import Card from "../card/Card"
 import {useLocation, useSearchParams} from "react-router-dom";
 import Style from "./CardList.module.css"
+import { getLocalData } from '../../utils/accessLocalStorage';
 
 const CardList = () => {
   const dispatch=useDispatch();
@@ -16,14 +17,14 @@ const CardList = () => {
     const handleSorting=(e)=>{
       setOrder(e.target.value);
     }
-
+let text=getLocalData('searchvalue')
     useEffect(()=>{
       let paramObj={
         params:{
           review:searchParams.getAll("review")
         }
       }
-        dispatch(getHotels(paramObj))
+        dispatch(getHotels(paramObj,text))
     },[location.search]);
 
   return (
