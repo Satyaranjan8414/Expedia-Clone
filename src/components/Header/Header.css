@@ -29,6 +29,7 @@
   display: flex;
   width: 25%;
   margin: 0 auto;
+  gap: 0.3rem;
   /* border-bottom: 1px solid #d7d4d2; */
   /* border: 1px solid rebeccapurple; */
   justify-content: center;

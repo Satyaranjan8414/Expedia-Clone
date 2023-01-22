@@ -62,7 +62,7 @@ export const HeaderTravellers = memo(({ traTrigger }) => {
           <div className={travel.HeaderTravellersController}>
             <button
               onClick={toggleReduceRoom}
-              disabled={Child > 0 ? false : true}
+              disabled={Room > 0 ? false : true}
               className={travel.HeaderTravellersIncreaseNumber}
             >
               <HiMinus />
@@ -82,7 +82,7 @@ export const HeaderTravellers = memo(({ traTrigger }) => {
           <div className={travel.HeaderTravellersController}>
             <button
               onClick={toggleReduceAdult}
-              disabled={Child > 0 ? false : true}
+              disabled={Adult > 0 ? false : true}
               className={travel.HeaderTravellersIncreaseNumber}
             >
               <HiMinus />
