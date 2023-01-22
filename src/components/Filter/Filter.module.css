@@ -1,5 +1,4 @@
 .container{
-    border: 1px solid greenyellow;
     width: 92%;
 }
 .Headings{
@@ -13,12 +12,21 @@
         font-size: 14px;
         font-weight: 500;
         margin-bottom: 3%;
-        margin-top: 10%;
+        margin-top: 5%;
 }
 .SliderLable{
-
+    
 }
+
 .SliderContainer{
     text-align: center;
     padding: 1% 5%;
+    margin-bottom: 5%;
+}
+.CHeckBoxContainer{
+        margin-bottom: 5%;
+}
+
+.RadioBTNContainer{
+    margin-bottom: 5%;
 }
