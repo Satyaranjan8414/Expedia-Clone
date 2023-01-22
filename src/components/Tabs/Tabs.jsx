@@ -11,6 +11,7 @@ export const Tabs = () => {
       {" "}
       <div className="inerTabsContainer">
         <div className="innerBlockTabs">
+          <h1>click</h1>
           <p
             className={
               insideToggle === 1 ? "innertabs active-innertabs" : "innertabs"
