@@ -102,7 +102,7 @@ function SignIn() {
                 _active={{
                   bg: "teal.400",
                 }}>
-                <RouterLink to="/admin"> SIGN IN </RouterLink>
+                <RouterLink to="/dashboard"> SIGN IN </RouterLink>
               </Button>
             </FormControl>
           </Flex>

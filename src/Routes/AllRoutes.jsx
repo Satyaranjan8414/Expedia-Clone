@@ -20,8 +20,13 @@ import TopImages from "../components/SingleHotel/TopImages"; // for singleHotel 
 import Location from "../components/SingleHotel/Location"; // for singleHotel Page test
 import Reviews from "../components/SingleHotel/Reviews"; // for SingleHotel Page  test
 import Payemnt from "../components/Payment/Payment";
+
+import TableData from "../pages/Admin/TableData";
+
+
 import HotelData from "../pages/HotelsSinglePage/HotelData";
 import PrivateRoute from "./PrivateRoute";
+
 
 const AllRoutes = () => {
   return (
@@ -59,6 +64,19 @@ const AllRoutes = () => {
             </PrivateRoute>
           }
         />
+
+        <Route path="/signinadmin" element={<SignIn/>}></Route>
+        <Route path="/dashboard" element={<Admin/>}></Route>
+        <Route path="/bookearly" element={<Bookearly/>} /> 
+        <Route path="/SingleHotel" element={<SingleHotel/>} /> 
+        <Route path="/carddata" element={<Cartdata/> } /> 
+        <Route path="/card" element={<Card/> } />
+        <Route path="/hotels" element={<Hotels/>} />
+        <Route path="*" element={<Pagenot />} />
+        <Route path="/payment" element={<Payemnt />} />
+        <Route path="/hoteldata" element={<TableData/>}></Route>
+        <Route path="/singlepage/:id" from element={<HotelData />} />
+
       </Routes>
     </div>
   );
