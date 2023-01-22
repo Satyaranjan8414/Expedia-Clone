@@ -38,11 +38,11 @@ export const getHotelFailAction = () => {
 // }
 
 export const getHotels =
-  (paramsobj = {}) =>
+  (paramsobj = {},val="pune") =>
   (dispatch) => {
     dispatch(getHotelReqAction());
     axios
-      .get("https://rose-repulsive-adder.cyclic.app/pune",
+      .get(`https://rose-repulsive-adder.cyclic.app/${val}`,
         paramsobj
       )
       .then((res) => {
