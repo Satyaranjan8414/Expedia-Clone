@@ -8,6 +8,7 @@ import {
     Image,
     Button,
   } from '@chakra-ui/react';
+  import {Link as RouterLink} from "react-router-dom";
   
   const IMAGE =
     'https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000';
@@ -55,21 +56,21 @@ import {
           </Box>
             <Image
               rounded={'lg'}
-              height={230}
-              width={282}
+              height={180}
+              width={250}
               objectFit={'cover'}
               src={img1}
             />
           </Box>
           <Stack pt={10} align={'center'}>
-            <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
+            <Text color={'gray.500'} fontSize={'xs'} textTransform={'uppercase'}>
               {heading}
             </Text>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
               {text1}
             </Heading>
             <Stack direction={'row'} align={'center'}>
-              <Text fontWeight={800} fontSize={'xl'}>
+              <Text fontWeight={800} fontSize={'xm'}>
                 {price1}
               </Text>
               <Text textDecoration={'line-through'} color={'gray.600'}>
@@ -77,10 +78,20 @@ import {
               </Text>
             </Stack>
           </Stack>
+          <Box style={{display:"flex", justifyContent:"space-around", marginTop:"20px",marginBottom:"-15px"}}>
+          <Text>Total Reviews</Text>
+            <Text>Rating</Text>
+            <Text>Review</Text>
+          </Box>
+          <Box style={{display:"flex", justifyContent:"space-around", marginTop:"20px"}}>
+          <Text>{no_of_reviews}</Text>
+            <Text>{rating}</Text>
+            <Text>{review}</Text>
+          </Box>
           
           <Box style={{display:"flex", justifyContent:"space-between", marginTop:"20px"}}>
           <Button>Delete</Button>
-          <Button>Edit</Button>
+          <RouterLink to={`/updatedata/${id}`}><Button>Edit</Button></RouterLink>
           </Box>
         </Box>
       </Center>

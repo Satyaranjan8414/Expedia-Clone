@@ -21,6 +21,7 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {Link as RouterLink} from "react-router-dom"
 import axios from 'axios';
 import AdminHotelCard from './AdminHotelCard';
+import { FaSearch } from 'react-icons/fa';
 
 const Links = [<RouterLink to="/dashboard">Dashboard</RouterLink>, 'Projects', 'Team'];
 
@@ -42,9 +43,11 @@ export default function TableData() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [data, setData] = useState([]);
+  const [city, setCity] = useState("");
 
-  const getData=()=>{
-    axios.get(`https://rose-repulsive-adder.cyclic.app/delhi`).then((res)=>{
+  const getData=(city="mumbai")=>{
+    // console.log("city", city)
+    axios.get(`https://rose-repulsive-adder.cyclic.app/${city}`).then((res)=>{
         setData(res.data);
     }).catch((error)=>{
         console.log("error", error)
@@ -52,8 +55,14 @@ export default function TableData() {
   }
 
   useEffect(()=>{
+    console.log("render")
     getData();
   },[])
+
+  const handleSearch=()=>{
+    console.log("city", city)
+    getData(city);
+  }
 
   return (
     <>
@@ -76,7 +85,8 @@ export default function TableData() {
                 <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
-            <Input placeholder={"Search Hotel"}/>
+            <Input value={city} onChange={(e)=>setCity(e.target.value)} placeholder={"Search Hotel"}/>
+            <Button onClick={()=>handleSearch()}><FaSearch width={"20px"}/></Button>
           </HStack>
           <Flex alignItems={'center'}>
             <Menu>
@@ -114,7 +124,7 @@ export default function TableData() {
         ) : null}
       </Box>
         
-      <Box p={4} display="grid" gridTemplateColumns="repeat(4, 1fr)">
+      <Box p={4} display="grid" gridTemplateColumns={{base:"repeat(1, 1fr)", md:"repeat(3, 1fr)", xl:"repeat(4, 1fr)"}}>
         {
             data.length>0 && data.map((el, index)=>{
                 return <AdminHotelCard
