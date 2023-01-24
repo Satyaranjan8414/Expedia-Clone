@@ -54,6 +54,14 @@ Homepage is one of the most important factor which also known by the name of Lan
 ![Screenshot (318)](https://user-images.githubusercontent.com/107980582/214427377-6b53d58d-e002-496f-a122-78772338cad4.png)
 
 
+### HotelPage
+
+This hotel offers comfortable rooms, top-notch amenities, and friendly service. Guests can enjoy a wide selection of dining options, a fitness center, and a pool. The hotel is ideally located near attractions, shopping, and entertainment. User can select By their choise and they can see all the details by clicking on the hotel name.
+
+![Screenshot (325)](https://user-images.githubusercontent.com/107980582/214433980-04891478-2671-4ddc-ba77-3ea0f63eee12.png)
+
+
+
 ### Navbar
 
 Navigation Bar is the topmost layer or bar of our website. In this bar, you find the various types of the menus like More Travel(Stays ,Flight,Cars,Packges,Holidays Activity) ,SignUp , SignIn , SingnOut , Admin etc.
