@@ -26,7 +26,11 @@ import TableData from "../pages/Admin/TableData";
 
 
 import HotelData from "../pages/HotelsSinglePage/HotelData";
+
+import UpdateDataForm from "../pages/Admin/UpdateDataForm";
+
 import PrivateRoute from "./PrivateRoute";
+
 
 
 const AllRoutes = () => {
@@ -78,6 +82,7 @@ const AllRoutes = () => {
         <Route path="/payment" element={<Payemnt />} />
         <Route path="/hoteldata" element={<TableData/>}></Route>
         <Route path="/singlepage/:id" from element={<HotelData />} />
+        <Route path="/updatedata/:id" element={<UpdateDataForm/>}></Route>
 
       </Routes>
     </div>
