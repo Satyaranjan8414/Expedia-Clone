@@ -1,20 +1,20 @@
-## Project Name - permissible-jump-1162
-Skinstore is a skin & beuty related website which helps you to find the different kinds of the products. SkinStore is part of THG Holdings plc, a globally renowned end-to-end tech platform specializing in taking brands direct to consumers across the globe. Using its proprietary technology and infrastructure, THG Ingenuity, the Group enables brands to grow at scale while driving unrivalled value and continuous performance.
+## Project Name - upbeat-afterthought-8396
+Expedia Inc. is an online travel agency owned by Expedia Group, an American online travel shopping company based in Seattle. The website and mobile app can be used to book airline tickets, hotel reservations, car rentals, cruise ships, and vacation packages
 
 ## Deployed Link
 
-Visit : skin-store-clone-three.vercel.app/
+Visit : https://clever-khapse-2d4555.netlify.app/
 
 ## Responsive for all screen sizes
 
 ## Languages Used
 
-Skinstore webiste looks very amazing and introduced with various type of languages like JavaScript, HTML, CSS etc. There are the some important details regarding with this project which is mentioned below:
+Expedia webiste looks very amazing and introduced with various type of languages like JavaScript, HTML, CSS etc. There are the some important details regarding with this project which is mentioned below:
 
 <ul dir="auto">
- <ol dir="auto">◉ JavaScript : 65.1%</ol>
- <ol dir="auto">◉ HTML : 20.9%</ol>
- <ol dir="auto">◉ CSS : 10.0%</ol>
+ <ol dir="auto">◉ JavaScript : 84.2%</ol>
+ <ol dir="auto">◉ HTML : 0.6%</ol>
+ <ol dir="auto">◉ CSS : 15.2%</ol>
  </ul>
  
  ## Functionalities
@@ -22,22 +22,24 @@ Skinstore webiste looks very amazing and introduced with various type of languag
  <ul dir="auto">
  
  <ol dir="auto">◉ Sort By price </ol>
- <ol dir="auto">◉ Sort By Brand</ol>
- <ol dir="auto">◉ Sort By Category</ol>
+ <ol dir="auto">◉ Sort By Rating</ol>
+ <ol dir="auto">◉ Sort By Area</ol>
+ <ol dir="auto">◉ Sort By Date</ol>
+ <ol dir="auto">◉ Payment Page</ol>
  <ol dir="auto">◉ Cart Functionality (like adding an item and removing) </ol>
  <ol dir="auto">◉ Admin Page</ol>
- <ol dir="auto">◉ Admin can add a product product Will be shown on the latest page </ol>
+ <ol dir="auto">◉ Admin can add a product product Will be shown on the Home Page </ol>
  <ol dir="auto">◉ Login and Sign Up </ol>
  </ul>
  
  ## Admin account details(Admin Email and Password)
  
- <p>you can add products by admin account and all the users can see the product on latest page(which contain all the latest items)</p>
+ <p>you can add products by admin account and all the users can see the product on Home page </p>
  
   <ul dir="auto">
  
- <ol dir="auto">admin email - priyank@admin.gmail.com</ol>
- <ol dir="auto">password - admin123</ol>
+ <ol dir="auto">admin email - </ol>
+ <ol dir="auto">password - </ol>
  
  </ul>
 
@@ -48,7 +50,7 @@ This report is provided by the Github language used stats. So, this is the total
 ### Homepage
 
 Homepage is one of the most important factor which also known by the name of Landing Page. There are different kinds of the Products and populer services are mentioned here. Take a look on it.
-![image](https://user-images.githubusercontent.com/97522154/208038198-80ece65b-59a6-42bc-aba6-238e8223e0f3.png)
+![image](![Screenshot (316)](https://user-images.githubusercontent.com/107980582/214426006-d9923ca3-f6b4-4801-826c-029df6030890.png))
 
 ### Navbar
 
