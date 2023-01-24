@@ -14,7 +14,7 @@ const Pimportant = () => {
   };
 
   if (payment) {
-    return <Navigate to="/" />;
+    return <Navigate to="/bookingconfirm" />;
   }
 
   return (
