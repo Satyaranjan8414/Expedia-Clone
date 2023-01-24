@@ -50,7 +50,8 @@ This report is provided by the Github language used stats. So, this is the total
 ### Homepage
 
 Homepage is one of the most important factor which also known by the name of Landing Page. There are different kinds of the Products and populer services are mentioned here. Take a look on it.
-![Screenshot (316)](https://user-images.githubusercontent.com/107980582/214426498-d1d1a300-530e-467e-80a2-3bd7a5f1b2ba.png)
+
+![Screenshot (318)](https://user-images.githubusercontent.com/107980582/214427377-6b53d58d-e002-496f-a122-78772338cad4.png)
 
 
 ### Navbar
