@@ -7,9 +7,10 @@ import {
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CarouselB from "./CarouselB";
+import { getLocalData } from "../../utils/accessLocalStorage";
 export default function RoomCard({ data }) {
   const handleReserve = () => {
-    localStorage.setItem("hotelReserved", JSON.stringify(data));
+    getLocalData("soloData", data);
   };
   const img5 =
     "https://images.trvl-media.com/hotels/3000000/2710000/2703400/2703358/00a8ece2.jpg?impolicy=resizecrop&rw=455&ra=fit";

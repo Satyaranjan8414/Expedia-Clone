@@ -10,28 +10,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import { getLocalData, setLocalDate } from "../../utils/accessLocalStorage";
 
-let data = {
-  id: 1,
-  city: "Delhi",
-  heading1: "Le Meridien New Delhi",
-  headig2: "New Delhi",
-  img1: "https://images.trvl-media.com/hotels/1000000/540000/531700/531648/0be7b7bd.jpg?impolicy=resizecrop&rw=455&ra=fit",
-  img2: "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/1000000/540000/531700/531648/db6e3fdf_b.jpg",
-  img3: "https://images.trvl-media.com/hotels/1000000/540000/531700/531648/8d2945d0.jpg?impolicy=resizecrop&rw=455&ra=fit",
-  img4: "https://images.trvl-media.com/hotels/1000000/540000/531700/531648/55467e67.jpg?impolicy=resizecrop&rw=455&ra=fit",
-  text1: "The Capital’s Only Modern Palace Hotel",
-  text2:
-    "In AC Hotel Genova we know what need: AC Lounge and delicious breakfast, comfy rooms, common areas and the best rates.",
-  text3: "Fully refundable",
-  text4: "Reserve now, pay later",
-  rating: "4.3/5",
-  review: "Excellent",
-  no_of_reviews: "(523 reviews)",
-  heading3: "We have 5 left at",
-  price1: "Rs8,650",
-  price2: "10207",
-};
-
 export default function HotelData() {
   let { id } = useParams();
   const [Data, setData] = useState({});
@@ -42,7 +20,7 @@ export default function HotelData() {
       .get(`https://rose-repulsive-adder.cyclic.app/${val}/${id}`)
       .then((res) => {
         setData(res.data);
-        setLocalDate("soloData", Data);
+        setLocalDate("soloData", res.data);
       });
   }
 
@@ -65,7 +43,7 @@ export default function HotelData() {
             <A />
             <B img1={img1} img2={img2} img3={img3} img4={img4} />
             <div>
-              <C data={data} />
+              <C data={Data} />
             </div>
           </div>
           {/* b */}

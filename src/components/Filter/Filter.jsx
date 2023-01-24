@@ -12,8 +12,19 @@ import { Divider ,Stack} from '@chakra-ui/react'
 import { Radio, RadioGroup } from "@chakra-ui/react";
 import { Checkbox } from "@chakra-ui/react";
 import {useSearchParams} from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const Filter = () => {
+
+  const Hotelsdata=useSelector((store)=>store.HotelsReducer.hotels);
+  let N=[]
+  Hotelsdata.forEach(element => {
+    if(!N.includes(element.heading2))
+    {
+      N.push(element.heading2);
+    }
+  });
+  console.log(N)
   
   const [searchParams,setSearchParams]= useSearchParams();
   const initialState=searchParams.getAll("rating");
@@ -94,23 +105,14 @@ const Filter = () => {
         <Divider />
 
         <div>
-          <h1 className={Style.subHeading}>Payment type</h1>
+          <h1 className={Style.subHeading}>Area</h1>
           <div className={Style.CHeckBoxContainer}>
             <Stack spacing={2} direction="column" >
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Pune")} onChange={triGgerCheckBox} value="Pune">Pune</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Model Colony")} onChange={triGgerCheckBox} value="Model Colony">Model Colony</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Yerawada")} onChange={triGgerCheckBox} value="Yerawada">Yerawada</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Mundhwa")} onChange={triGgerCheckBox} value="Mundhwa">Mundhwa</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Shivajinagar")} onChange={triGgerCheckBox} value="Shivajinagar">Shivajinagar</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Kharadi")} onChange={triGgerCheckBox} value="Kharadi">Kharadi</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Pimpri - Chinchwad")} onChange={triGgerCheckBox} value="Pimpri - Chinchwad">Pimpri - Chinchwad</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Erandwane")} onChange={triGgerCheckBox} value="Erandwane">Erandwane</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Kalyani Nagar")} onChange={triGgerCheckBox} value="Kalyani Nagar">Kalyani Nagar</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Central Pune")} onChange={triGgerCheckBox} value="Central Pune">Central Pune</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Sadashiv Peth")} onChange={triGgerCheckBox} value="Sadashiv Peth">Sadashiv Peth</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Kharadi")} onChange={triGgerCheckBox} value="Kharadi">Kharadi</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Koregaon Park")} onChange={triGgerCheckBox} value="Koregaon Park">Koregaon Park</Checkbox>
-              <Checkbox colorScheme="blue" size='sm' isChecked={review.includes("Baner")} onChange={triGgerCheckBox} value="Baner">Baner</Checkbox>
+              {N.length > 0 && N.map((ele,index)=>{
+                return <Checkbox key={index} colorScheme="blue" size='sm' isChecked={review.includes({ele})} onChange={triGgerCheckBox} value={ele}>{ele}</Checkbox>
+                
+              }) }
+              
             </Stack>
           </div>
         </div>

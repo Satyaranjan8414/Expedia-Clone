@@ -1,34 +1,9 @@
 import { useState } from "react";
-
-let lsData1 = {
-  id: 1,
-  city: "Delhi",
-  heading1: "Hotel Smart Plaza Delhi Airport",
-  headig2: "New Delhi",
-  img1: "https://cf.bstatic.com/xdata/images/hotel/square200/277752827.webp?k=8c40a98919e19c728c73b4e9fa0f2d6b06d8517f3f8264fc7a8541ab8f73781b&o=&s=1",
-  img2: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/277752827.jpg?k=574d2eaf5e5412890cffebffbe788bd7b907d802313e882f4ad438cbcb8b360b&o=&hp=1",
-  img3: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/330281468.jpg?k=9e80746ac3af9eebd847ef33d47428d48595849b4a79834a6c3c876c6fac9765&o=&hp=1",
-  img4: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/330281469.jpg?k=7d753fdc296e3fbbe0d5b59dd38374a0450c9b32ad137a3bc0dabe75aabff582&o=&hp=1",
-  img5: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/330281475.jpg?k=8a8327ac1d4e38831b091c30085c5ee3951f0827073a79269a3fee5462a8112c&o=&hp=1",
-  img6: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/330281478.jpg?k=b666f98a5f6c1464d167ae3b852e12d2299579394f86bf38ecb5c5b36d3875ad&o=&hp=1",
-  img7: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/385463673.jpg?k=cba532679ca56283c45d524fb3be7283967ee116efac6ea9b26e6a1eb29e7cb2&o=&hp=1",
-  text1: "The Capital’s Only Modern Palace Hotel",
-  text2:
-    "Located in the Mahipalpur area of New Delhi, Hotel Smart Plaza Delhi Airport is a 10-minute drive from Indira Gandhi International Airport.",
-  text3: "Fully refundable",
-  text4: "Travel Sustainable property",
-  rating: "4.3/5",
-  review: "Excellent",
-  no_of_reviews: "(3,246 reviews)",
-  location:
-    "A Block, Near Indira Gandhi International Airport, National Highway -8, Mahipalpur, 110037 New Delhi, India",
-  location1: "Great location",
-  price1: "Rs8,650",
-  price2: "10207",
-};
+import { getLocalData } from "../../utils/accessLocalStorage";
 
 export default function Hoteldetail() {
   //   const lsData1 = JSON.parse(localStorage.getItem("Hoteldata")) || [];
+  const lsData1 = getLocalData("soloData");
   function convert(price) {
     let str = "";
     price = price.split("");
