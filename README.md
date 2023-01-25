@@ -64,7 +64,7 @@ This hotel offers comfortable rooms, top-notch amenities, and friendly service. 
 
 ### Navbar
 
-Navigation Bar is the topmost layer or bar of our website. In this bar, you find the various types of the menus like More Travel(Stays ,Flight,Cars,Packges,Holidays Activity) ,SignUp , SignIn , SingnOut , Admin etc.
+Navigation Bar is the topmost layer or bar of our website. In this bar, you find the various types of the menus like More Travel(Stays, Flight, Cars, Packges, Holidays Activity), SignUp, SignIn, SingnOut, Admin etc.
 
 ![Screenshot (320)](https://user-images.githubusercontent.com/107980582/214429157-04d8a2eb-666a-4b5b-99a5-14a92b092830.png)
 
@@ -85,7 +85,7 @@ This website is fully mobile friendly. You can use this website in mobile, table
 Things Used
 We using different kinds of the technologies to make this website. These things are as follows:
 
-- Javascript, React, Readux, Chakra UI, CSS, HTML ,tailwind etc.
+- Javascript, React, Readux, Chakra UI, CSS, HTML, tailwind etc.
 
 ## Contributers
 
