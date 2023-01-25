@@ -38,8 +38,8 @@ Expedia webiste looks very amazing and introduced with various type of languages
  
   <ul dir="auto">
  
- <ol dir="auto">admin email - </ol>
- <ol dir="auto">password - </ol>
+ <ol dir="auto">admin email - raghuveersain987@gmail.com</ol>
+ <ol dir="auto">password - TeamSatya@5</ol>
  
  </ul>
 
