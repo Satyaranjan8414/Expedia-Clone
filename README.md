@@ -1,4 +1,4 @@
-## Project Name - upbeat-afterthought-8396
+## Project Name - Expedia-clone
 Expedia Inc. is an online travel agency owned by Expedia Group, an American online travel shopping company based in Seattle. The website and mobile app can be used to book airline tickets, hotel reservations, car rentals, cruise ships, and vacation packages
 
 ## Deployed Link
