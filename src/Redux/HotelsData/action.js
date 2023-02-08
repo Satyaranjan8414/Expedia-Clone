@@ -23,6 +23,6 @@ export const getHotel=(place)=>(dispatch)=>{
         // console.log(res.data)
     }).catch((err)=>{
         dispatch(getHotelSuccess())
-        console.log(err)
+        // console.log(err)
     })
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Chakra imports
 import {
   Box,
@@ -12,13 +12,65 @@ import {
   Switch,
   Text,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
-import {Link as RouterLink} from "react-router-dom"
+import {Link as RouterLink, useNavigate} from "react-router-dom"
+import axios from "axios";
+import { setLocalDate } from "../../../utils/accessLocalStorage";
 // Assets
 // import signInImage from "assets/img/signInImage.png";
+let initialData={
+  email:"",
+  password:""
+}
 
 function SignIn() {
   // Chakra color mode
+//https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan
+const [state, setState] = useState(initialData);
+const [auth, setAuth] = useState([]);
+const navigate=useNavigate();
+const Toast = useToast();
+// console.log(state)
+
+const getData=()=>{
+  axios.get(`https://636bda08ad62451f9fbd8076.mockapi.io/apnidukaan`).then((res)=>{
+    console.log(res)
+    setAuth(res.data.items)
+  });
+}
+
+const handleChange=(e)=>{
+  setState({...state,[e.target.name ]:e.target.value})
+}
+
+const handleSubmit=(e)=>{
+
+ let l1="";
+ let l2="";
+ let authData=auth.length>0 && auth.filter(({email,password})=>{
+    return email===state.email && password===state.password 
+    
+ })
+//  console.log(authData)
+setState(initialData)
+if(authData.length>0){
+  setLocalDate("AdminEmail",authData[authData.length-1])
+  navigate("/dashboard")
+}else{
+  Toast({
+    title: `Authentication failed`,
+    status: "warning",
+    duration: 1500,
+    position: "top",
+    isClosable: true,
+  });
+}
+}
+
+useEffect(()=>{
+  getData();
+},[])
 
   const titleColor = useColorModeValue("teal.300", "teal.200");
   const textColor = useColorModeValue("gray.400", "white");
@@ -59,6 +111,9 @@ function SignIn() {
                 Email
               </FormLabel>
               <Input
+              name="email"
+              value={state.email}
+              onChange={handleChange}
                 borderRadius='15px'
                 mb='24px'
                 fontSize='sm'
@@ -70,6 +125,9 @@ function SignIn() {
                 Password
               </FormLabel>
               <Input
+              name="password"
+              value={state.password}
+              onChange={handleChange}
                 borderRadius='15px'
                 mb='36px'
                 fontSize='sm'
@@ -88,6 +146,7 @@ function SignIn() {
                 </FormLabel>
               </FormControl>
               <Button
+              onClick={handleSubmit}
                 fontSize='10px'
                 type='submit'
                 bg='teal.300'
@@ -102,7 +161,8 @@ function SignIn() {
                 _active={{
                   bg: "teal.400",
                 }}>
-                <RouterLink to="/dashboard"> SIGN IN </RouterLink>
+                {/* <RouterLink to="/dashboard"> SIGN IN </RouterLink> */}
+                SIGN IN
               </Button>
             </FormControl>
           </Flex>

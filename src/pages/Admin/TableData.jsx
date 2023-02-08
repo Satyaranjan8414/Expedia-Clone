@@ -16,14 +16,16 @@ import {
   useColorModeValue,
   Stack,
   Input,
+  Image,
+  useColorMode,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import {Link as RouterLink} from "react-router-dom"
 import axios from 'axios';
 import AdminHotelCard from './AdminHotelCard';
 import { FaSearch } from 'react-icons/fa';
 
-const Links = [<RouterLink to="/dashboard">Dashboard</RouterLink>, 'Projects', 'Team'];
+const Links = [<RouterLink to="/dashboard">Dashboard</RouterLink>, '', 'Team'];
 
 const NavLink = ({ children }) => (
   <Link
@@ -41,6 +43,7 @@ const NavLink = ({ children }) => (
 
 export default function TableData() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const [data, setData] = useState([]);
   const [city, setCity] = useState("");
@@ -55,7 +58,7 @@ export default function TableData() {
   }
 
   useEffect(()=>{
-    console.log("render")
+    // console.log("render")
     getData();
   },[])
 
@@ -63,6 +66,8 @@ export default function TableData() {
     console.log("city", city)
     getData(city);
   }
+
+  Links[1]=`Total_${data.length}`
 
   return (
     <>
@@ -76,7 +81,7 @@ export default function TableData() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Trevellia</Box>
+            <Box width={"10%"}><RouterLink to={"/dashboard"}><Image width={"100%"} src='https://i.imgur.com/wQLmi8a.png'/></RouterLink></Box>
             <HStack
               as={'nav'}
               spacing={4}
@@ -85,11 +90,16 @@ export default function TableData() {
                 <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
-            <Input value={city} onChange={(e)=>setCity(e.target.value)} placeholder={"Search Hotel"}/>
+            <Box width={"50%"}>
+            <Input width={"50%"} value={city} onChange={(e)=>setCity(e.target.value)} placeholder={"Search Hotel"}/>
             <Button onClick={()=>handleSearch()}><FaSearch width={"20px"}/></Button>
+            </Box>
           </HStack>
           <Flex alignItems={'center'}>
             <Menu>
+            <Button onClick={toggleColorMode}>
+                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            </Button>
               <MenuButton
                 as={Button}
                 rounded={'full'}
@@ -103,7 +113,7 @@ export default function TableData() {
                   }
                 />
               </MenuButton>
-              <MenuList>
+              <MenuList zIndex={999}>
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
