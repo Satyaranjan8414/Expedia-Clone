@@ -43,7 +43,8 @@ import { ReactText } from 'react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Cards from '../../components/Cards';
 import BarGraph from './Graph/BarGraph';
-import {Link as RouterLink} from "react-router-dom";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
+import { getLocalData } from '../../utils/accessLocalStorage';
 
 
 
@@ -61,6 +62,8 @@ const LinkItems = [
 export default function Admin({
     children,
   }) {
+
+  
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -152,6 +155,13 @@ const NavItem = ({ icon, children, ...rest }) => {
 
 const MobileNav = ({ onOpen, ...rest }) => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [state, setState] = useState(getLocalData("AdminEmail")||{})
+  let navigate=useNavigate();
+  // console.log(state.userName)
+
+  const handleRedirect=()=>{
+    navigate("/signinadmin")
+  }
 
   return (
     <>
@@ -209,7 +219,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Raghuveer Sain</Text>
+                  <Text fontSize="sm">{state.userName}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>
@@ -226,7 +236,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={handleRedirect}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

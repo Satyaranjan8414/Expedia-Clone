@@ -29,7 +29,7 @@ export const SignUpFunction = (data) => (dispatch) => {
     })
     .catch((e) => {
       dispatch({ type: CREATE_FAILURE });
-      console.log(e);
+      // console.log(e);
     });
 };
 
